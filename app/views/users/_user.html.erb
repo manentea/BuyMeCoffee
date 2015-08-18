@@ -12,7 +12,7 @@
     </div>
     <div class="card-copy">
       <p class='<%= user.id   %>'>Rating: <%= user.rating %></p>
-      <p> skills: styling and profiling</p>
+      <p> skills: <%= user.skill_list %></p>
       <div><button id='<%= user.id %>' class='popup'>Invite</button>
       <button data-id='<%= user.id %>' class='popup1'>Rate Me!</button></div>
     </div>
