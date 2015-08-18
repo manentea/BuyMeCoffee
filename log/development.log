@@ -609,3 +609,110 @@ ActionView::Template::Error (undefined method `id' for nil:NilClass):
   Rendered /Users/manentea/.rbenv/versions/2.0.0-p481/lib/ruby/gems/2.0.0/gems/web-console-2.1.3/lib/web_console/templates/main.js.erb within layouts/javascript (0.3ms)
   Rendered /Users/manentea/.rbenv/versions/2.0.0-p481/lib/ruby/gems/2.0.0/gems/web-console-2.1.3/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.4ms)
   Rendered /Users/manentea/.rbenv/versions/2.0.0-p481/lib/ruby/gems/2.0.0/gems/web-console-2.1.3/lib/web_console/templates/index.html.erb (30.6ms)
+
+
+Started GET "/" for ::1 at 2015-08-18 00:08:01 -0400
+  [1m[36mActiveRecord::SchemaMigration Load (0.6ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by LandingPageController#index as HTML
+  [1m[35mInvitation Load (0.8ms)[0m  SELECT "invitations".* FROM "invitations" WHERE "invitations"."mentor_id" IS NULL AND "invitations"."status" = 'f'
+  Rendered landing_page/_map.html.erb (0.4ms)
+  [1m[36mUser Load (0.6ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."status" = 't' LIMIT 5 OFFSET 0[0m
+  [1m[35mHABTM_Categories Load (0.6ms)[0m  SELECT "categories_users".* FROM "categories_users" WHERE "categories_users"."user_id" IN (1, 2, 3, 4, 6)
+  [1m[36m (0.4ms)[0m  [1mSELECT COUNT(*) FROM "users" WHERE "users"."status" = 't'[0m
+  [1m[35mBasicProfile Load (0.4ms)[0m  SELECT  "basic_profiles".* FROM "basic_profiles" WHERE "basic_profiles"."user_id" = $1 LIMIT 1  [["user_id", 1]]
+  [1m[36m (0.6ms)[0m  [1mSELECT AVG("reviews"."rating") FROM "reviews" WHERE "reviews"."mentor_id" = $1[0m  [["mentor_id", 1]]
+  [1m[35mBasicProfile Load (0.3ms)[0m  SELECT  "basic_profiles".* FROM "basic_profiles" WHERE "basic_profiles"."user_id" = $1 LIMIT 1  [["user_id", 2]]
+  [1m[36m (0.2ms)[0m  [1mSELECT AVG("reviews"."rating") FROM "reviews" WHERE "reviews"."mentor_id" = $1[0m  [["mentor_id", 2]]
+  [1m[35mBasicProfile Load (0.2ms)[0m  SELECT  "basic_profiles".* FROM "basic_profiles" WHERE "basic_profiles"."user_id" = $1 LIMIT 1  [["user_id", 3]]
+  [1m[36m (0.2ms)[0m  [1mSELECT AVG("reviews"."rating") FROM "reviews" WHERE "reviews"."mentor_id" = $1[0m  [["mentor_id", 3]]
+  [1m[35mBasicProfile Load (0.2ms)[0m  SELECT  "basic_profiles".* FROM "basic_profiles" WHERE "basic_profiles"."user_id" = $1 LIMIT 1  [["user_id", 4]]
+  [1m[36m (0.3ms)[0m  [1mSELECT AVG("reviews"."rating") FROM "reviews" WHERE "reviews"."mentor_id" = $1[0m  [["mentor_id", 4]]
+  [1m[35mBasicProfile Load (0.2ms)[0m  SELECT  "basic_profiles".* FROM "basic_profiles" WHERE "basic_profiles"."user_id" = $1 LIMIT 1  [["user_id", 6]]
+  [1m[36m (0.2ms)[0m  [1mSELECT AVG("reviews"."rating") FROM "reviews" WHERE "reviews"."mentor_id" = $1[0m  [["mentor_id", 6]]
+  Rendered users/_user.html.erb (73.7ms)
+  Rendered landing_page/index.html.erb within layouts/application (535.3ms)
+  Rendered application/_navbar.html.erb (3.6ms)
+  [1m[35mCategory Load (0.5ms)[0m  SELECT "categories".* FROM "categories"
+  Rendered landing_page/_signup.html.erb (28.6ms)
+Completed 200 OK in 1157ms (Views: 1040.5ms | ActiveRecord: 14.8ms)
+
+
+Started GET "/users.json" for ::1 at 2015-08-18 00:08:03 -0400
+Processing by UsersController#index as JSON
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."status" = 't'[0m
+  [1m[35mHABTM_Categories Load (0.3ms)[0m  SELECT "categories_users".* FROM "categories_users" WHERE "categories_users"."user_id" IN (1, 2, 3, 4, 6, 8)
+  [1m[36mCategory Load (0.4ms)[0m  [1mSELECT "categories".* FROM "categories" WHERE "categories"."id" IN (1)[0m
+  [1m[35mReview Load (0.3ms)[0m  SELECT "reviews".* FROM "reviews" WHERE "reviews"."mentor_id" IN (1, 2, 3, 4, 6, 8)
+Completed 200 OK in 23ms (Views: 19.7ms | ActiveRecord: 2.5ms)
+
+
+Started GET "/users.json" for ::1 at 2015-08-18 00:08:03 -0400
+Processing by UsersController#index as JSON
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."status" = 't'[0m
+  [1m[35mHABTM_Categories Load (0.5ms)[0m  SELECT "categories_users".* FROM "categories_users" WHERE "categories_users"."user_id" IN (1, 2, 3, 4, 6, 8)
+  [1m[36mCategory Load (0.5ms)[0m  [1mSELECT "categories".* FROM "categories" WHERE "categories"."id" IN (1)[0m
+  [1m[35mReview Load (0.3ms)[0m  SELECT "reviews".* FROM "reviews" WHERE "reviews"."mentor_id" IN (1, 2, 3, 4, 6, 8)
+Completed 200 OK in 14ms (Views: 11.3ms | ActiveRecord: 1.8ms)
+
+
+Started POST "/users" for ::1 at 2015-08-18 00:08:18 -0400
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"gFf1v4tbGgopglWiyYohuSDlJjONrosmuHdV2obHNQucICbi3do17nDrMAk3is7SwiuE8nwTHOv/kwlmAjXtwg==", "user"=>{"name"=>"sss", "email"=>"sss", "password"=>"[FILTERED]", "linkedin"=>"sss", "about"=>"sss", "categories"=>"2", "skill_list"=>"sss"}, "commit"=>"Create User"}
+Unpermitted parameter: categories
+  [1m[36mSkill Load (0.4ms)[0m  [1mSELECT  "skills".* FROM "skills" WHERE "skills"."name" = $1 LIMIT 1[0m  [["name", "sss"]]
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (39.8ms)[0m  [1mINSERT INTO "skills" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "sss"], ["created_at", "2015-08-18 04:08:18.401611"], ["updated_at", "2015-08-18 04:08:18.401611"]]
+  [1m[35m (0.6ms)[0m  COMMIT
+  [1m[36mCategory Load (0.3ms)[0m  [1mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT 1[0m  [["id", 2]]
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.8ms)[0m  [1mINSERT INTO "users" ("name", "about", "password_digest", "email", "linkedin", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["name", "sss"], ["about", "sss"], ["password_digest", "$2a$10$AJlAtLAIIfeA2h2h4gPgDOX3wV8PBMdKwwQV0L7kJrupIzVOSvad6"], ["email", "sss"], ["linkedin", "sss"], ["created_at", "2015-08-18 04:08:18.448977"], ["updated_at", "2015-08-18 04:08:18.448977"]]
+  [1m[35mSQL (0.3ms)[0m  UPDATE "skills" SET "user_id" = $1, "updated_at" = $2 WHERE "skills"."id" = $3  [["user_id", 9], ["updated_at", "2015-08-18 04:08:18.451797"], ["id", 9]]
+  [1m[36m (0.5ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.8ms)[0m  [1mINSERT INTO "categories_users" ("user_id", "category_id") VALUES ($1, $2) RETURNING "id"[0m  [["user_id", 9], ["category_id", 2]]
+  [1m[35m (0.4ms)[0m  COMMIT
+Redirected to http://localhost:3000/
+Completed 302 Found in 170ms (ActiveRecord: 44.0ms)
+
+
+Started GET "/" for ::1 at 2015-08-18 00:08:18 -0400
+Processing by LandingPageController#index as HTML
+  [1m[36mInvitation Load (0.3ms)[0m  [1mSELECT "invitations".* FROM "invitations" WHERE "invitations"."mentor_id" IS NULL AND "invitations"."status" = 'f'[0m
+  Rendered landing_page/_map.html.erb (0.1ms)
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."status" = 't' LIMIT 5 OFFSET 0
+  [1m[36mHABTM_Categories Load (0.3ms)[0m  [1mSELECT "categories_users".* FROM "categories_users" WHERE "categories_users"."user_id" IN (1, 2, 3, 4, 6)[0m
+  [1m[35m (0.3ms)[0m  SELECT COUNT(*) FROM "users" WHERE "users"."status" = 't'
+  [1m[36mBasicProfile Load (0.2ms)[0m  [1mSELECT  "basic_profiles".* FROM "basic_profiles" WHERE "basic_profiles"."user_id" = $1 LIMIT 1[0m  [["user_id", 1]]
+  [1m[35m (0.2ms)[0m  SELECT AVG("reviews"."rating") FROM "reviews" WHERE "reviews"."mentor_id" = $1  [["mentor_id", 1]]
+  [1m[36mBasicProfile Load (0.2ms)[0m  [1mSELECT  "basic_profiles".* FROM "basic_profiles" WHERE "basic_profiles"."user_id" = $1 LIMIT 1[0m  [["user_id", 2]]
+  [1m[35m (0.2ms)[0m  SELECT AVG("reviews"."rating") FROM "reviews" WHERE "reviews"."mentor_id" = $1  [["mentor_id", 2]]
+  [1m[36mBasicProfile Load (0.1ms)[0m  [1mSELECT  "basic_profiles".* FROM "basic_profiles" WHERE "basic_profiles"."user_id" = $1 LIMIT 1[0m  [["user_id", 3]]
+  [1m[35m (0.2ms)[0m  SELECT AVG("reviews"."rating") FROM "reviews" WHERE "reviews"."mentor_id" = $1  [["mentor_id", 3]]
+  [1m[36mBasicProfile Load (0.1ms)[0m  [1mSELECT  "basic_profiles".* FROM "basic_profiles" WHERE "basic_profiles"."user_id" = $1 LIMIT 1[0m  [["user_id", 4]]
+  [1m[35m (0.2ms)[0m  SELECT AVG("reviews"."rating") FROM "reviews" WHERE "reviews"."mentor_id" = $1  [["mentor_id", 4]]
+  [1m[36mBasicProfile Load (0.1ms)[0m  [1mSELECT  "basic_profiles".* FROM "basic_profiles" WHERE "basic_profiles"."user_id" = $1 LIMIT 1[0m  [["user_id", 6]]
+  [1m[35m (0.2ms)[0m  SELECT AVG("reviews"."rating") FROM "reviews" WHERE "reviews"."mentor_id" = $1  [["mentor_id", 6]]
+  Rendered users/_user.html.erb (10.4ms)
+  Rendered landing_page/index.html.erb within layouts/application (18.8ms)
+  Rendered application/_navbar.html.erb (1.5ms)
+  [1m[36mCategory Load (0.4ms)[0m  [1mSELECT "categories".* FROM "categories"[0m
+  Rendered landing_page/_signup.html.erb (5.2ms)
+Completed 200 OK in 95ms (Views: 89.3ms | ActiveRecord: 3.3ms)
+
+
+Started GET "/users.json" for ::1 at 2015-08-18 00:08:18 -0400
+Processing by UsersController#index as JSON
+  [1m[35mUser Load (0.5ms)[0m  SELECT "users".* FROM "users" WHERE "users"."status" = 't'
+  [1m[36mHABTM_Categories Load (0.4ms)[0m  [1mSELECT "categories_users".* FROM "categories_users" WHERE "categories_users"."user_id" IN (1, 2, 3, 4, 6, 8)[0m
+  [1m[35mCategory Load (0.4ms)[0m  SELECT "categories".* FROM "categories" WHERE "categories"."id" IN (1)
+  [1m[36mReview Load (0.4ms)[0m  [1mSELECT "reviews".* FROM "reviews" WHERE "reviews"."mentor_id" IN (1, 2, 3, 4, 6, 8)[0m
+Completed 200 OK in 15ms (Views: 11.6ms | ActiveRecord: 1.7ms)
+
+
+Started GET "/users.json" for ::1 at 2015-08-18 00:08:18 -0400
+Processing by UsersController#index as JSON
+  [1m[35mUser Load (1.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."status" = 't'
+  [1m[36mHABTM_Categories Load (0.4ms)[0m  [1mSELECT "categories_users".* FROM "categories_users" WHERE "categories_users"."user_id" IN (1, 2, 3, 4, 6, 8)[0m
+  [1m[35mCategory Load (0.4ms)[0m  SELECT "categories".* FROM "categories" WHERE "categories"."id" IN (1)
+  [1m[36mReview Load (0.4ms)[0m  [1mSELECT "reviews".* FROM "reviews" WHERE "reviews"."mentor_id" IN (1, 2, 3, 4, 6, 8)[0m
+Completed 200 OK in 13ms (Views: 9.4ms | ActiveRecord: 2.2ms)

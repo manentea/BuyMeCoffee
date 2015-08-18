@@ -25,7 +25,6 @@ class UsersController < ApplicationController
   end
 
   def create
-
     @new_user = User.new(user_params)
     @category = Category.find(params[:user][:categories].to_i)
     if @new_user.save
@@ -37,7 +36,6 @@ class UsersController < ApplicationController
   end
 
   def edit
-
     @user = User.find(session[:user_id])
     @categories = Category.all
   end
