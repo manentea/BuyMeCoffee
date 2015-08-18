@@ -433,3 +433,179 @@ Processing by UsersController#index as JSON
   [1m[36mCategory Load (0.3ms)[0m  [1mSELECT "categories".* FROM "categories" WHERE "categories"."id" IN (1)[0m
   [1m[35mReview Load (0.3ms)[0m  SELECT "reviews".* FROM "reviews" WHERE "reviews"."mentor_id" IN (1, 2, 3, 4, 6, 8)
 Completed 200 OK in 9ms (Views: 6.9ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/" for ::1 at 2015-08-17 23:50:50 -0400
+  [1m[36mActiveRecord::SchemaMigration Load (0.7ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by LandingPageController#index as HTML
+  [1m[35mInvitation Load (0.7ms)[0m  SELECT "invitations".* FROM "invitations" WHERE "invitations"."mentor_id" IS NULL AND "invitations"."status" = 'f'
+  Rendered landing_page/_map.html.erb (0.4ms)
+  [1m[36mUser Load (0.8ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."status" = 't' LIMIT 5 OFFSET 0[0m
+  [1m[35mHABTM_Categories Load (0.7ms)[0m  SELECT "categories_users".* FROM "categories_users" WHERE "categories_users"."user_id" IN (1, 2, 3, 4, 6)
+  [1m[36m (0.4ms)[0m  [1mSELECT COUNT(*) FROM "users" WHERE "users"."status" = 't'[0m
+  [1m[35mBasicProfile Load (0.5ms)[0m  SELECT  "basic_profiles".* FROM "basic_profiles" WHERE "basic_profiles"."user_id" = $1 LIMIT 1  [["user_id", 1]]
+  [1m[36m (0.5ms)[0m  [1mSELECT AVG("reviews"."rating") FROM "reviews" WHERE "reviews"."mentor_id" = $1[0m  [["mentor_id", 1]]
+  [1m[35mBasicProfile Load (0.2ms)[0m  SELECT  "basic_profiles".* FROM "basic_profiles" WHERE "basic_profiles"."user_id" = $1 LIMIT 1  [["user_id", 2]]
+  [1m[36m (0.3ms)[0m  [1mSELECT AVG("reviews"."rating") FROM "reviews" WHERE "reviews"."mentor_id" = $1[0m  [["mentor_id", 2]]
+  [1m[35mBasicProfile Load (0.2ms)[0m  SELECT  "basic_profiles".* FROM "basic_profiles" WHERE "basic_profiles"."user_id" = $1 LIMIT 1  [["user_id", 3]]
+  [1m[36m (0.2ms)[0m  [1mSELECT AVG("reviews"."rating") FROM "reviews" WHERE "reviews"."mentor_id" = $1[0m  [["mentor_id", 3]]
+  [1m[35mBasicProfile Load (0.2ms)[0m  SELECT  "basic_profiles".* FROM "basic_profiles" WHERE "basic_profiles"."user_id" = $1 LIMIT 1  [["user_id", 4]]
+  [1m[36m (0.2ms)[0m  [1mSELECT AVG("reviews"."rating") FROM "reviews" WHERE "reviews"."mentor_id" = $1[0m  [["mentor_id", 4]]
+  [1m[35mBasicProfile Load (0.2ms)[0m  SELECT  "basic_profiles".* FROM "basic_profiles" WHERE "basic_profiles"."user_id" = $1 LIMIT 1  [["user_id", 6]]
+  [1m[36m (0.2ms)[0m  [1mSELECT AVG("reviews"."rating") FROM "reviews" WHERE "reviews"."mentor_id" = $1[0m  [["mentor_id", 6]]
+  Rendered users/_user.html.erb (67.2ms)
+  Rendered landing_page/index.html.erb within layouts/application (599.3ms)
+WARNING: The inline-block mixin is deprecated and will be removed in the next major version release
+         on line 6 of /Users/manentea/.rbenv/versions/2.0.0-p481/lib/ruby/gems/2.0.0/gems/bourbon-4.2.3/app/assets/stylesheets/_bourbon-deprecated-upcoming.scss, in `inline-block'
+         from line 38 of /Users/manentea/Desktop/random/lake-bodom/myCoffee/app/assets/stylesheets/invitations.scss, in `@content'
+         from line 62 of /Users/manentea/.rbenv/versions/2.0.0-p481/lib/ruby/gems/2.0.0/gems/neat-1.7.2/app/assets/stylesheets/grid/_media.scss, in `media'
+         from line 37 of /Users/manentea/Desktop/random/lake-bodom/myCoffee/app/assets/stylesheets/invitations.scss
+         from line 8 of /Users/manentea/Desktop/random/lake-bodom/myCoffee/app/assets/stylesheets/application.scss
+
+
+  Rendered application/_navbar.html.erb (19.4ms)
+  [1m[35mCategory Load (0.6ms)[0m  SELECT "categories".* FROM "categories"
+  Rendered landing_page/_signup.html.erb (66.1ms)
+Completed 200 OK in 3573ms (Views: 3402.1ms | ActiveRecord: 15.2ms)
+
+
+Started GET "/assets/application.self-8a066e14631507e01cc0ea80a4def162273389343a6094c0817f2a561bc1fea7.css?body=1" for ::1 at 2015-08-17 23:50:55 -0400
+
+
+Started GET "/users.json" for ::1 at 2015-08-17 23:50:55 -0400
+Processing by UsersController#index as JSON
+  [1m[36mUser Load (0.6ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."status" = 't'[0m
+  [1m[35mHABTM_Categories Load (0.4ms)[0m  SELECT "categories_users".* FROM "categories_users" WHERE "categories_users"."user_id" IN (1, 2, 3, 4, 6, 8)
+  [1m[36mCategory Load (0.4ms)[0m  [1mSELECT "categories".* FROM "categories" WHERE "categories"."id" IN (1)[0m
+  [1m[35mReview Load (0.3ms)[0m  SELECT "reviews".* FROM "reviews" WHERE "reviews"."mentor_id" IN (1, 2, 3, 4, 6, 8)
+Completed 200 OK in 119ms (Views: 113.9ms | ActiveRecord: 3.2ms)
+
+
+Started GET "/users.json" for ::1 at 2015-08-17 23:50:55 -0400
+Processing by UsersController#index as JSON
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."status" = 't'[0m
+  [1m[35mHABTM_Categories Load (0.4ms)[0m  SELECT "categories_users".* FROM "categories_users" WHERE "categories_users"."user_id" IN (1, 2, 3, 4, 6, 8)
+  [1m[36mCategory Load (0.3ms)[0m  [1mSELECT "categories".* FROM "categories" WHERE "categories"."id" IN (1)[0m
+  [1m[35mReview Load (0.3ms)[0m  SELECT "reviews".* FROM "reviews" WHERE "reviews"."mentor_id" IN (1, 2, 3, 4, 6, 8)
+Completed 200 OK in 11ms (Views: 8.6ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/" for ::1 at 2015-08-17 23:53:54 -0400
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by LandingPageController#index as HTML
+  [1m[35mInvitation Load (0.6ms)[0m  SELECT "invitations".* FROM "invitations" WHERE "invitations"."mentor_id" IS NULL AND "invitations"."status" = 'f'
+  Rendered landing_page/_map.html.erb (0.5ms)
+  [1m[36mUser Load (0.6ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."status" = 't' LIMIT 5 OFFSET 0[0m
+  [1m[35mHABTM_Categories Load (0.5ms)[0m  SELECT "categories_users".* FROM "categories_users" WHERE "categories_users"."user_id" IN (1, 2, 3, 4, 6)
+  [1m[36m (0.4ms)[0m  [1mSELECT COUNT(*) FROM "users" WHERE "users"."status" = 't'[0m
+  [1m[35mBasicProfile Load (0.3ms)[0m  SELECT  "basic_profiles".* FROM "basic_profiles" WHERE "basic_profiles"."user_id" = $1 LIMIT 1  [["user_id", 1]]
+  [1m[36m (0.4ms)[0m  [1mSELECT AVG("reviews"."rating") FROM "reviews" WHERE "reviews"."mentor_id" = $1[0m  [["mentor_id", 1]]
+  [1m[35mBasicProfile Load (0.2ms)[0m  SELECT  "basic_profiles".* FROM "basic_profiles" WHERE "basic_profiles"."user_id" = $1 LIMIT 1  [["user_id", 2]]
+  [1m[36m (0.2ms)[0m  [1mSELECT AVG("reviews"."rating") FROM "reviews" WHERE "reviews"."mentor_id" = $1[0m  [["mentor_id", 2]]
+  [1m[35mBasicProfile Load (0.2ms)[0m  SELECT  "basic_profiles".* FROM "basic_profiles" WHERE "basic_profiles"."user_id" = $1 LIMIT 1  [["user_id", 3]]
+  [1m[36m (0.2ms)[0m  [1mSELECT AVG("reviews"."rating") FROM "reviews" WHERE "reviews"."mentor_id" = $1[0m  [["mentor_id", 3]]
+  [1m[35mBasicProfile Load (0.2ms)[0m  SELECT  "basic_profiles".* FROM "basic_profiles" WHERE "basic_profiles"."user_id" = $1 LIMIT 1  [["user_id", 4]]
+  [1m[36m (0.2ms)[0m  [1mSELECT AVG("reviews"."rating") FROM "reviews" WHERE "reviews"."mentor_id" = $1[0m  [["mentor_id", 4]]
+  [1m[35mBasicProfile Load (0.2ms)[0m  SELECT  "basic_profiles".* FROM "basic_profiles" WHERE "basic_profiles"."user_id" = $1 LIMIT 1  [["user_id", 6]]
+  [1m[36m (0.2ms)[0m  [1mSELECT AVG("reviews"."rating") FROM "reviews" WHERE "reviews"."mentor_id" = $1[0m  [["mentor_id", 6]]
+  Rendered users/_user.html.erb (69.3ms)
+  Rendered landing_page/index.html.erb within layouts/application (610.6ms)
+  Rendered application/_navbar.html.erb (5.2ms)
+  [1m[35mCategory Load (0.6ms)[0m  SELECT "categories".* FROM "categories"
+  Rendered landing_page/_signup.html.erb (53.8ms)
+Completed 200 OK in 1482ms (Views: 1318.1ms | ActiveRecord: 14.5ms)
+
+
+Started GET "/assets/map.self-d6f2a1a282019411e786f39755e417fc9d47174cedec4f3cdc90a51131842b6b.js?body=1" for ::1 at 2015-08-17 23:53:56 -0400
+
+
+Started GET "/users.json" for ::1 at 2015-08-17 23:53:56 -0400
+Processing by UsersController#index as JSON
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."status" = 't'[0m
+  [1m[35mHABTM_Categories Load (0.3ms)[0m  SELECT "categories_users".* FROM "categories_users" WHERE "categories_users"."user_id" IN (1, 2, 3, 4, 6, 8)
+  [1m[36mCategory Load (0.6ms)[0m  [1mSELECT "categories".* FROM "categories" WHERE "categories"."id" IN (1)[0m
+  [1m[35mReview Load (0.5ms)[0m  SELECT "reviews".* FROM "reviews" WHERE "reviews"."mentor_id" IN (1, 2, 3, 4, 6, 8)
+Completed 200 OK in 48ms (Views: 43.3ms | ActiveRecord: 3.3ms)
+
+
+Started GET "/users.json" for ::1 at 2015-08-17 23:53:56 -0400
+Processing by UsersController#index as JSON
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."status" = 't'[0m
+  [1m[35mHABTM_Categories Load (0.3ms)[0m  SELECT "categories_users".* FROM "categories_users" WHERE "categories_users"."user_id" IN (1, 2, 3, 4, 6, 8)
+  [1m[36mCategory Load (0.4ms)[0m  [1mSELECT "categories".* FROM "categories" WHERE "categories"."id" IN (1)[0m
+  [1m[35mReview Load (0.3ms)[0m  SELECT "reviews".* FROM "reviews" WHERE "reviews"."mentor_id" IN (1, 2, 3, 4, 6, 8)
+Completed 200 OK in 13ms (Views: 10.7ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/users/8/card" for ::1 at 2015-08-17 23:54:03 -0400
+Processing by UsersController#card as HTML
+  Parameters: {"id"=>"8"}
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 8]]
+  [1m[35m (0.2ms)[0m  SELECT AVG("reviews"."rating") FROM "reviews" WHERE "reviews"."mentor_id" = $1  [["mentor_id", 8]]
+  [1m[36mBasicProfile Load (0.4ms)[0m  [1mSELECT  "basic_profiles".* FROM "basic_profiles" WHERE "basic_profiles"."user_id" = $1 LIMIT 1[0m  [["user_id", 8]]
+  [1m[35mSkill Load (0.5ms)[0m  SELECT "skills".* FROM "skills" WHERE "skills"."user_id" = $1  [["user_id", 8]]
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1[0m
+  Rendered users/show.html.erb (30.6ms)
+Completed 500 Internal Server Error in 83ms (ActiveRecord: 1.8ms)
+
+ActionView::Template::Error (undefined method `id' for nil:NilClass):
+    14:   <div> Skills: <% @user.skills.each do |skill| %>
+    15:       <%= skill.name %>
+    16:     <% end %>
+    17:     <%if current_user.id == @user.id%>
+    18:      <li><%=link_to 'Edit Profile',edit_user_path(current_user) %></li>
+    19:      <li><a href="/linkedin_oauth_url" class="btn btn-primary btn-larg">Connect to LinkedIn</a></li>
+    20:      <%end%>
+  app/views/users/show.html.erb:17:in `_app_views_users_show_html_erb___2368151400067253590_70269460593500'
+  app/controllers/users_controller.rb:19:in `card'
+
+
+  Rendered /Users/manentea/.rbenv/versions/2.0.0-p481/lib/ruby/gems/2.0.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_source.erb (8.4ms)
+  Rendered /Users/manentea/.rbenv/versions/2.0.0-p481/lib/ruby/gems/2.0.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.9ms)
+  Rendered /Users/manentea/.rbenv/versions/2.0.0-p481/lib/ruby/gems/2.0.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.1ms)
+  Rendered /Users/manentea/.rbenv/versions/2.0.0-p481/lib/ruby/gems/2.0.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (37.3ms)
+  Rendered /Users/manentea/.rbenv/versions/2.0.0-p481/lib/ruby/gems/2.0.0/gems/web-console-2.1.3/lib/web_console/templates/_markup.html.erb (0.5ms)
+  Rendered /Users/manentea/.rbenv/versions/2.0.0-p481/lib/ruby/gems/2.0.0/gems/web-console-2.1.3/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.6ms)
+  Rendered /Users/manentea/.rbenv/versions/2.0.0-p481/lib/ruby/gems/2.0.0/gems/web-console-2.1.3/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.5ms)
+  Rendered /Users/manentea/.rbenv/versions/2.0.0-p481/lib/ruby/gems/2.0.0/gems/web-console-2.1.3/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/manentea/.rbenv/versions/2.0.0-p481/lib/ruby/gems/2.0.0/gems/web-console-2.1.3/lib/web_console/templates/console.js.erb within layouts/javascript (33.9ms)
+  Rendered /Users/manentea/.rbenv/versions/2.0.0-p481/lib/ruby/gems/2.0.0/gems/web-console-2.1.3/lib/web_console/templates/main.js.erb within layouts/javascript (0.4ms)
+  Rendered /Users/manentea/.rbenv/versions/2.0.0-p481/lib/ruby/gems/2.0.0/gems/web-console-2.1.3/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.5ms)
+  Rendered /Users/manentea/.rbenv/versions/2.0.0-p481/lib/ruby/gems/2.0.0/gems/web-console-2.1.3/lib/web_console/templates/index.html.erb (88.9ms)
+
+
+Started GET "/users/3/card" for ::1 at 2015-08-17 23:54:06 -0400
+Processing by UsersController#card as HTML
+  Parameters: {"id"=>"3"}
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 3]]
+  [1m[36m (0.2ms)[0m  [1mSELECT AVG("reviews"."rating") FROM "reviews" WHERE "reviews"."mentor_id" = $1[0m  [["mentor_id", 3]]
+  [1m[35mBasicProfile Load (0.2ms)[0m  SELECT  "basic_profiles".* FROM "basic_profiles" WHERE "basic_profiles"."user_id" = $1 LIMIT 1  [["user_id", 3]]
+  [1m[36mSkill Load (0.2ms)[0m  [1mSELECT "skills".* FROM "skills" WHERE "skills"."user_id" = $1[0m  [["user_id", 3]]
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1
+  Rendered users/show.html.erb (4.7ms)
+Completed 500 Internal Server Error in 9ms (ActiveRecord: 1.2ms)
+
+ActionView::Template::Error (undefined method `id' for nil:NilClass):
+    14:   <div> Skills: <% @user.skills.each do |skill| %>
+    15:       <%= skill.name %>
+    16:     <% end %>
+    17:     <%if current_user.id == @user.id%>
+    18:      <li><%=link_to 'Edit Profile',edit_user_path(current_user) %></li>
+    19:      <li><a href="/linkedin_oauth_url" class="btn btn-primary btn-larg">Connect to LinkedIn</a></li>
+    20:      <%end%>
+  app/views/users/show.html.erb:17:in `_app_views_users_show_html_erb___2368151400067253590_70269460593500'
+  app/controllers/users_controller.rb:19:in `card'
+
+
+  Rendered /Users/manentea/.rbenv/versions/2.0.0-p481/lib/ruby/gems/2.0.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_source.erb (6.9ms)
+  Rendered /Users/manentea/.rbenv/versions/2.0.0-p481/lib/ruby/gems/2.0.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.5ms)
+  Rendered /Users/manentea/.rbenv/versions/2.0.0-p481/lib/ruby/gems/2.0.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.0ms)
+  Rendered /Users/manentea/.rbenv/versions/2.0.0-p481/lib/ruby/gems/2.0.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (22.9ms)
+  Rendered /Users/manentea/.rbenv/versions/2.0.0-p481/lib/ruby/gems/2.0.0/gems/web-console-2.1.3/lib/web_console/templates/_markup.html.erb (0.3ms)
+  Rendered /Users/manentea/.rbenv/versions/2.0.0-p481/lib/ruby/gems/2.0.0/gems/web-console-2.1.3/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/manentea/.rbenv/versions/2.0.0-p481/lib/ruby/gems/2.0.0/gems/web-console-2.1.3/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.2ms)
+  Rendered /Users/manentea/.rbenv/versions/2.0.0-p481/lib/ruby/gems/2.0.0/gems/web-console-2.1.3/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/manentea/.rbenv/versions/2.0.0-p481/lib/ruby/gems/2.0.0/gems/web-console-2.1.3/lib/web_console/templates/console.js.erb within layouts/javascript (14.2ms)
+  Rendered /Users/manentea/.rbenv/versions/2.0.0-p481/lib/ruby/gems/2.0.0/gems/web-console-2.1.3/lib/web_console/templates/main.js.erb within layouts/javascript (0.3ms)
+  Rendered /Users/manentea/.rbenv/versions/2.0.0-p481/lib/ruby/gems/2.0.0/gems/web-console-2.1.3/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.4ms)
+  Rendered /Users/manentea/.rbenv/versions/2.0.0-p481/lib/ruby/gems/2.0.0/gems/web-console-2.1.3/lib/web_console/templates/index.html.erb (30.6ms)

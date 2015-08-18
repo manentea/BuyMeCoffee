@@ -19,7 +19,7 @@ app.directive('googleplace', function() {
   };
 });
 
-app.controller('MapCtrl', function($http, $scope){
+app.controller('MapCtrl', ['$http', '$scope', function($http, $scope){
 
   $scope.markers = [];
 
@@ -56,4 +56,4 @@ app.controller('MapCtrl', function($http, $scope){
   };
   addMarkers();
   setInterval(addMarkers, 20000);
-});
+}]);
