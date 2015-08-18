@@ -1788,3 +1788,1102 @@ Processing by UsersController#index as JSON
   [1m[36mCategory Load (0.5ms)[0m  [1mSELECT "categories".* FROM "categories" WHERE "categories"."id" IN (1)[0m
   [1m[35mReview Load (0.5ms)[0m  SELECT "reviews".* FROM "reviews" WHERE "reviews"."mentor_id" IN (1, 2, 3, 4, 6, 8)
 Completed 200 OK in 14ms (Views: 11.2ms | ActiveRecord: 1.7ms)
+
+
+Started GET "/" for ::1 at 2015-08-18 00:50:34 -0400
+  [1m[36mActiveRecord::SchemaMigration Load (0.6ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by LandingPageController#index as HTML
+  [1m[35mInvitation Load (15.3ms)[0m  SELECT "invitations".* FROM "invitations" WHERE "invitations"."mentor_id" IS NULL AND "invitations"."status" = 'f'
+  Rendered landing_page/_map.html.erb (0.5ms)
+  [1m[36mUser Load (0.7ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."status" = 't' LIMIT 5 OFFSET 0[0m
+  [1m[35mHABTM_Categories Load (0.7ms)[0m  SELECT "categories_users".* FROM "categories_users" WHERE "categories_users"."user_id" IN (1, 2, 3, 4, 6)
+  [1m[36m (0.4ms)[0m  [1mSELECT COUNT(*) FROM "users" WHERE "users"."status" = 't'[0m
+  [1m[35mBasicProfile Load (0.5ms)[0m  SELECT  "basic_profiles".* FROM "basic_profiles" WHERE "basic_profiles"."user_id" = $1 LIMIT 1  [["user_id", 1]]
+  [1m[36m (0.5ms)[0m  [1mSELECT AVG("reviews"."rating") FROM "reviews" WHERE "reviews"."mentor_id" = $1[0m  [["mentor_id", 1]]
+  [1m[35mSkill Load (0.5ms)[0m  SELECT "skills".* FROM "skills" WHERE "skills"."user_id" = $1  [["user_id", 1]]
+  [1m[36mBasicProfile Load (0.3ms)[0m  [1mSELECT  "basic_profiles".* FROM "basic_profiles" WHERE "basic_profiles"."user_id" = $1 LIMIT 1[0m  [["user_id", 2]]
+  [1m[35m (0.3ms)[0m  SELECT AVG("reviews"."rating") FROM "reviews" WHERE "reviews"."mentor_id" = $1  [["mentor_id", 2]]
+  [1m[36mSkill Load (0.2ms)[0m  [1mSELECT "skills".* FROM "skills" WHERE "skills"."user_id" = $1[0m  [["user_id", 2]]
+  [1m[35mBasicProfile Load (0.2ms)[0m  SELECT  "basic_profiles".* FROM "basic_profiles" WHERE "basic_profiles"."user_id" = $1 LIMIT 1  [["user_id", 3]]
+  [1m[36m (0.2ms)[0m  [1mSELECT AVG("reviews"."rating") FROM "reviews" WHERE "reviews"."mentor_id" = $1[0m  [["mentor_id", 3]]
+  [1m[35mSkill Load (0.2ms)[0m  SELECT "skills".* FROM "skills" WHERE "skills"."user_id" = $1  [["user_id", 3]]
+  [1m[36mBasicProfile Load (0.3ms)[0m  [1mSELECT  "basic_profiles".* FROM "basic_profiles" WHERE "basic_profiles"."user_id" = $1 LIMIT 1[0m  [["user_id", 4]]
+  [1m[35m (0.3ms)[0m  SELECT AVG("reviews"."rating") FROM "reviews" WHERE "reviews"."mentor_id" = $1  [["mentor_id", 4]]
+  [1m[36mSkill Load (0.2ms)[0m  [1mSELECT "skills".* FROM "skills" WHERE "skills"."user_id" = $1[0m  [["user_id", 4]]
+  [1m[35mBasicProfile Load (0.2ms)[0m  SELECT  "basic_profiles".* FROM "basic_profiles" WHERE "basic_profiles"."user_id" = $1 LIMIT 1  [["user_id", 6]]
+  [1m[36m (0.2ms)[0m  [1mSELECT AVG("reviews"."rating") FROM "reviews" WHERE "reviews"."mentor_id" = $1[0m  [["mentor_id", 6]]
+  [1m[35mSkill Load (0.2ms)[0m  SELECT "skills".* FROM "skills" WHERE "skills"."user_id" = $1  [["user_id", 6]]
+  Rendered users/_user.html.erb (98.4ms)
+  Rendered landing_page/index.html.erb within layouts/application (649.1ms)
+WARNING: The inline-block mixin is deprecated and will be removed in the next major version release
+         on line 6 of /Users/manentea/.rbenv/versions/2.0.0-p481/lib/ruby/gems/2.0.0/gems/bourbon-4.2.3/app/assets/stylesheets/_bourbon-deprecated-upcoming.scss, in `inline-block'
+         from line 38 of /Users/manentea/Desktop/random/lake-bodom/myCoffee/app/assets/stylesheets/invitations.scss, in `@content'
+         from line 62 of /Users/manentea/.rbenv/versions/2.0.0-p481/lib/ruby/gems/2.0.0/gems/neat-1.7.2/app/assets/stylesheets/grid/_media.scss, in `media'
+         from line 37 of /Users/manentea/Desktop/random/lake-bodom/myCoffee/app/assets/stylesheets/invitations.scss
+         from line 8 of /Users/manentea/Desktop/random/lake-bodom/myCoffee/app/assets/stylesheets/application.scss
+
+
+  Rendered application/_navbar.html.erb (4.8ms)
+  [1m[36mCategory Load (0.5ms)[0m  [1mSELECT "categories".* FROM "categories"[0m
+  Rendered landing_page/_signup.html.erb (83.1ms)
+Completed 200 OK in 3264ms (Views: 2985.5ms | ActiveRecord: 99.2ms)
+
+
+Started GET "/assets/application.self-9c29550cf9049aed59ee54b1dfad93b2d2af59771c1b47fec4f548b817ff25f8.css?body=1" for ::1 at 2015-08-18 00:50:39 -0400
+
+
+Started GET "/assets/jquery_ujs.self-ca5248a2fad13d6bd58ea121318d642f195f0b2dd818b30615f785ff365e8d1f.js?body=1" for ::1 at 2015-08-18 00:50:39 -0400
+
+
+Started GET "/assets/jquery.self-d03a5518f45df77341bdbe6201ba3bfa547ebba8ed64f0ea56bfa5f96ea7c074.js?body=1" for ::1 at 2015-08-18 00:50:39 -0400
+
+
+Started GET "/assets/inbox.self-3461de6a0a511e51dcd0625cb23590652935ae7c3ea8ef8a80c71c2992385cf0.js?body=1" for ::1 at 2015-08-18 00:50:39 -0400
+
+
+Started GET "/assets/invitations.self-01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b.js?body=1" for ::1 at 2015-08-18 00:50:39 -0400
+
+
+Started GET "/assets/invite.self-e133006c496ae6cecfa09b57253e998c1ba3a036ffac87673364ca1a733b2686.js?body=1" for ::1 at 2015-08-18 00:50:39 -0400
+
+
+Started GET "/assets/landing_page.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-08-18 00:50:39 -0400
+
+
+Started GET "/assets/linkedin.self-19a187bec6cdb96d6de80a61c16c857c613536adf9138476bd367db38d282635.js?body=1" for ::1 at 2015-08-18 00:50:39 -0400
+
+
+Started GET "/assets/map.self-d6f2a1a282019411e786f39755e417fc9d47174cedec4f3cdc90a51131842b6b.js?body=1" for ::1 at 2015-08-18 00:50:39 -0400
+
+
+Started GET "/assets/map_stick.self-b442d99324d0e99b1c5ced633cc994e7cb0fbebeb4d78b74693477122af61ce8.js?body=1" for ::1 at 2015-08-18 00:50:39 -0400
+
+
+Started GET "/assets/navbar.self-49b187eda3263d8929e075c93b1516fcb31112a33cbc48b8a93d4373b21f087f.js?body=1" for ::1 at 2015-08-18 00:50:39 -0400
+
+
+Started GET "/assets/reviews.self-f211498789a043e54ddf76d9380b9fb7c139233553d9a049cacec7a797a7a5f2.js?body=1" for ::1 at 2015-08-18 00:50:39 -0400
+
+
+Started GET "/assets/tabs.self-bf0e4618237795790e31eb6c93a9629d0d79146578a227eeea0bc2e5b7209d81.js?body=1" for ::1 at 2015-08-18 00:50:39 -0400
+
+
+Started GET "/assets/application.self-43beaadb13072266fed946c38719550e1909ebb9ee5954d311623e59d5a13bba.js?body=1" for ::1 at 2015-08-18 00:50:39 -0400
+
+
+Started GET "/assets/users.self-6c68a1cdc45493ddcf809e2322d2eb9a7c4bc10aceaa057a57f138e4f4ad511b.js?body=1" for ::1 at 2015-08-18 00:50:39 -0400
+
+
+Started GET "/assets/invite.self-e133006c496ae6cecfa09b57253e998c1ba3a036ffac87673364ca1a733b2686.js?body=1" for ::1 at 2015-08-18 00:50:39 -0400
+
+
+Started GET "/assets/inbox.self-3461de6a0a511e51dcd0625cb23590652935ae7c3ea8ef8a80c71c2992385cf0.js?body=1" for ::1 at 2015-08-18 00:50:39 -0400
+
+
+Started GET "/assets/invitations.self-01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b.js?body=1" for ::1 at 2015-08-18 00:50:39 -0400
+
+
+Started GET "/assets/jquery.self-d03a5518f45df77341bdbe6201ba3bfa547ebba8ed64f0ea56bfa5f96ea7c074.js?body=1" for ::1 at 2015-08-18 00:50:39 -0400
+
+
+Started GET "/assets/navbutton-bf00fa45d4a4177eca3f4d70c7327cbe7aad2200305127e9d3307b6a5458ed8e.png" for ::1 at 2015-08-18 00:50:39 -0400
+
+
+Started GET "/assets/jquery.self-d03a5518f45df77341bdbe6201ba3bfa547ebba8ed64f0ea56bfa5f96ea7c074.js?body=1" for ::1 at 2015-08-18 00:50:39 -0400
+
+
+Started GET "/users.json" for ::1 at 2015-08-18 00:50:39 -0400
+Processing by UsersController#index as JSON
+  [1m[35mUser Load (0.4ms)[0m  SELECT "users".* FROM "users" WHERE "users"."status" = 't'
+  [1m[36mHABTM_Categories Load (0.3ms)[0m  [1mSELECT "categories_users".* FROM "categories_users" WHERE "categories_users"."user_id" IN (1, 2, 3, 4, 6, 8)[0m
+  [1m[35mCategory Load (0.5ms)[0m  SELECT "categories".* FROM "categories" WHERE "categories"."id" IN (1)
+  [1m[36mReview Load (0.5ms)[0m  [1mSELECT "reviews".* FROM "reviews" WHERE "reviews"."mentor_id" IN (1, 2, 3, 4, 6, 8)[0m
+Completed 200 OK in 68ms (Views: 64.2ms | ActiveRecord: 2.9ms)
+
+
+Started GET "/?page=2&_=1439873439604" for ::1 at 2015-08-18 00:50:39 -0400
+Processing by LandingPageController#index as JS
+  Parameters: {"page"=>"2", "_"=>"1439873439604"}
+  [1m[35mInvitation Load (0.4ms)[0m  SELECT "invitations".* FROM "invitations" WHERE "invitations"."mentor_id" IS NULL AND "invitations"."status" = 'f'
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."status" = 't' LIMIT 5 OFFSET 5[0m
+  [1m[35mHABTM_Categories Load (0.3ms)[0m  SELECT "categories_users".* FROM "categories_users" WHERE "categories_users"."user_id" IN (8)
+  [1m[36mCategory Load (0.3ms)[0m  [1mSELECT "categories".* FROM "categories" WHERE "categories"."id" IN (1)[0m
+  [1m[35mBasicProfile Load (0.4ms)[0m  SELECT  "basic_profiles".* FROM "basic_profiles" WHERE "basic_profiles"."user_id" = $1 LIMIT 1  [["user_id", 8]]
+  [1m[36m (0.3ms)[0m  [1mSELECT AVG("reviews"."rating") FROM "reviews" WHERE "reviews"."mentor_id" = $1[0m  [["mentor_id", 8]]
+  [1m[35mSkill Load (0.2ms)[0m  SELECT "skills".* FROM "skills" WHERE "skills"."user_id" = $1  [["user_id", 8]]
+  Rendered users/_user.html.erb (6.9ms)
+  Rendered landing_page/index.js.erb (17.8ms)
+Completed 200 OK in 29ms (Views: 23.7ms | ActiveRecord: 2.4ms)
+
+
+Started GET "/users.json" for ::1 at 2015-08-18 00:50:39 -0400
+Processing by UsersController#index as JSON
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."status" = 't'[0m
+  [1m[35mHABTM_Categories Load (0.4ms)[0m  SELECT "categories_users".* FROM "categories_users" WHERE "categories_users"."user_id" IN (1, 2, 3, 4, 6, 8)
+  [1m[36mCategory Load (0.4ms)[0m  [1mSELECT "categories".* FROM "categories" WHERE "categories"."id" IN (1)[0m
+  [1m[35mReview Load (0.3ms)[0m  SELECT "reviews".* FROM "reviews" WHERE "reviews"."mentor_id" IN (1, 2, 3, 4, 6, 8)
+Completed 200 OK in 12ms (Views: 9.4ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/" for ::1 at 2015-08-18 00:50:57 -0400
+Processing by LandingPageController#index as HTML
+  [1m[36mInvitation Load (0.4ms)[0m  [1mSELECT "invitations".* FROM "invitations" WHERE "invitations"."mentor_id" IS NULL AND "invitations"."status" = 'f'[0m
+  Rendered landing_page/_map.html.erb (0.0ms)
+  [1m[35mUser Load (0.4ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."status" = 't' LIMIT 5 OFFSET 0
+  [1m[36mHABTM_Categories Load (0.3ms)[0m  [1mSELECT "categories_users".* FROM "categories_users" WHERE "categories_users"."user_id" IN (1, 2, 3, 4, 6)[0m
+  [1m[35m (0.3ms)[0m  SELECT COUNT(*) FROM "users" WHERE "users"."status" = 't'
+  [1m[36mBasicProfile Load (0.2ms)[0m  [1mSELECT  "basic_profiles".* FROM "basic_profiles" WHERE "basic_profiles"."user_id" = $1 LIMIT 1[0m  [["user_id", 1]]
+  [1m[35m (0.2ms)[0m  SELECT AVG("reviews"."rating") FROM "reviews" WHERE "reviews"."mentor_id" = $1  [["mentor_id", 1]]
+  [1m[36mSkill Load (0.1ms)[0m  [1mSELECT "skills".* FROM "skills" WHERE "skills"."user_id" = $1[0m  [["user_id", 1]]
+  [1m[35mBasicProfile Load (0.1ms)[0m  SELECT  "basic_profiles".* FROM "basic_profiles" WHERE "basic_profiles"."user_id" = $1 LIMIT 1  [["user_id", 2]]
+  [1m[36m (0.2ms)[0m  [1mSELECT AVG("reviews"."rating") FROM "reviews" WHERE "reviews"."mentor_id" = $1[0m  [["mentor_id", 2]]
+  [1m[35mSkill Load (0.1ms)[0m  SELECT "skills".* FROM "skills" WHERE "skills"."user_id" = $1  [["user_id", 2]]
+  [1m[36mBasicProfile Load (0.1ms)[0m  [1mSELECT  "basic_profiles".* FROM "basic_profiles" WHERE "basic_profiles"."user_id" = $1 LIMIT 1[0m  [["user_id", 3]]
+  [1m[35m (0.2ms)[0m  SELECT AVG("reviews"."rating") FROM "reviews" WHERE "reviews"."mentor_id" = $1  [["mentor_id", 3]]
+  [1m[36mSkill Load (0.1ms)[0m  [1mSELECT "skills".* FROM "skills" WHERE "skills"."user_id" = $1[0m  [["user_id", 3]]
+  [1m[35mBasicProfile Load (0.1ms)[0m  SELECT  "basic_profiles".* FROM "basic_profiles" WHERE "basic_profiles"."user_id" = $1 LIMIT 1  [["user_id", 4]]
+  [1m[36m (0.2ms)[0m  [1mSELECT AVG("reviews"."rating") FROM "reviews" WHERE "reviews"."mentor_id" = $1[0m  [["mentor_id", 4]]
+  [1m[35mSkill Load (0.1ms)[0m  SELECT "skills".* FROM "skills" WHERE "skills"."user_id" = $1  [["user_id", 4]]
+  [1m[36mBasicProfile Load (0.1ms)[0m  [1mSELECT  "basic_profiles".* FROM "basic_profiles" WHERE "basic_profiles"."user_id" = $1 LIMIT 1[0m  [["user_id", 6]]
+  [1m[35m (0.2ms)[0m  SELECT AVG("reviews"."rating") FROM "reviews" WHERE "reviews"."mentor_id" = $1  [["mentor_id", 6]]
+  [1m[36mSkill Load (0.1ms)[0m  [1mSELECT "skills".* FROM "skills" WHERE "skills"."user_id" = $1[0m  [["user_id", 6]]
+  Rendered users/_user.html.erb (13.2ms)
+  Rendered landing_page/index.html.erb within layouts/application (20.7ms)
+  Rendered application/_navbar.html.erb (1.5ms)
+  [1m[35mCategory Load (0.3ms)[0m  SELECT "categories".* FROM "categories"
+  Rendered landing_page/_signup.html.erb (6.3ms)
+Completed 200 OK in 168ms (Views: 161.8ms | ActiveRecord: 3.7ms)
+
+
+Started GET "/assets/jquery_ujs.self-ca5248a2fad13d6bd58ea121318d642f195f0b2dd818b30615f785ff365e8d1f.js?body=1" for ::1 at 2015-08-18 00:50:57 -0400
+
+
+Started GET "/assets/jquery.self-d03a5518f45df77341bdbe6201ba3bfa547ebba8ed64f0ea56bfa5f96ea7c074.js?body=1" for ::1 at 2015-08-18 00:50:57 -0400
+
+
+Started GET "/assets/invitations.self-01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b.js?body=1" for ::1 at 2015-08-18 00:50:57 -0400
+
+
+Started GET "/assets/inbox.self-3461de6a0a511e51dcd0625cb23590652935ae7c3ea8ef8a80c71c2992385cf0.js?body=1" for ::1 at 2015-08-18 00:50:57 -0400
+
+
+Started GET "/assets/invite.self-e133006c496ae6cecfa09b57253e998c1ba3a036ffac87673364ca1a733b2686.js?body=1" for ::1 at 2015-08-18 00:50:57 -0400
+
+
+Started GET "/assets/landing_page.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-08-18 00:50:57 -0400
+
+
+Started GET "/assets/application.self-9c29550cf9049aed59ee54b1dfad93b2d2af59771c1b47fec4f548b817ff25f8.css?body=1" for ::1 at 2015-08-18 00:50:57 -0400
+
+
+Started GET "/assets/linkedin.self-19a187bec6cdb96d6de80a61c16c857c613536adf9138476bd367db38d282635.js?body=1" for ::1 at 2015-08-18 00:50:57 -0400
+
+
+Started GET "/assets/map.self-d6f2a1a282019411e786f39755e417fc9d47174cedec4f3cdc90a51131842b6b.js?body=1" for ::1 at 2015-08-18 00:50:57 -0400
+
+
+Started GET "/assets/map_stick.self-b442d99324d0e99b1c5ced633cc994e7cb0fbebeb4d78b74693477122af61ce8.js?body=1" for ::1 at 2015-08-18 00:50:57 -0400
+
+
+Started GET "/assets/navbar.self-49b187eda3263d8929e075c93b1516fcb31112a33cbc48b8a93d4373b21f087f.js?body=1" for ::1 at 2015-08-18 00:50:57 -0400
+
+
+Started GET "/assets/reviews.self-f211498789a043e54ddf76d9380b9fb7c139233553d9a049cacec7a797a7a5f2.js?body=1" for ::1 at 2015-08-18 00:50:57 -0400
+
+
+Started GET "/assets/tabs.self-bf0e4618237795790e31eb6c93a9629d0d79146578a227eeea0bc2e5b7209d81.js?body=1" for ::1 at 2015-08-18 00:50:57 -0400
+
+
+Started GET "/assets/users.self-6c68a1cdc45493ddcf809e2322d2eb9a7c4bc10aceaa057a57f138e4f4ad511b.js?body=1" for ::1 at 2015-08-18 00:50:57 -0400
+
+
+Started GET "/assets/application.self-43beaadb13072266fed946c38719550e1909ebb9ee5954d311623e59d5a13bba.js?body=1" for ::1 at 2015-08-18 00:50:57 -0400
+
+
+Started GET "/assets/navbutton-bf00fa45d4a4177eca3f4d70c7327cbe7aad2200305127e9d3307b6a5458ed8e.png" for ::1 at 2015-08-18 00:50:57 -0400
+
+
+Started GET "/users.json" for ::1 at 2015-08-18 00:50:57 -0400
+Processing by UsersController#index as JSON
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."status" = 't'[0m
+  [1m[35mHABTM_Categories Load (0.3ms)[0m  SELECT "categories_users".* FROM "categories_users" WHERE "categories_users"."user_id" IN (1, 2, 3, 4, 6, 8)
+  [1m[36mCategory Load (0.3ms)[0m  [1mSELECT "categories".* FROM "categories" WHERE "categories"."id" IN (1)[0m
+  [1m[35mReview Load (0.4ms)[0m  SELECT "reviews".* FROM "reviews" WHERE "reviews"."mentor_id" IN (1, 2, 3, 4, 6, 8)
+Completed 200 OK in 11ms (Views: 8.6ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/?page=2&_=1439873457577" for ::1 at 2015-08-18 00:50:57 -0400
+Processing by LandingPageController#index as JS
+  Parameters: {"page"=>"2", "_"=>"1439873457577"}
+  [1m[36mInvitation Load (0.3ms)[0m  [1mSELECT "invitations".* FROM "invitations" WHERE "invitations"."mentor_id" IS NULL AND "invitations"."status" = 'f'[0m
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."status" = 't' LIMIT 5 OFFSET 5
+  [1m[36mHABTM_Categories Load (0.3ms)[0m  [1mSELECT "categories_users".* FROM "categories_users" WHERE "categories_users"."user_id" IN (8)[0m
+  [1m[35mCategory Load (0.3ms)[0m  SELECT "categories".* FROM "categories" WHERE "categories"."id" IN (1)
+  [1m[36mBasicProfile Load (0.2ms)[0m  [1mSELECT  "basic_profiles".* FROM "basic_profiles" WHERE "basic_profiles"."user_id" = $1 LIMIT 1[0m  [["user_id", 8]]
+  [1m[35m (0.2ms)[0m  SELECT AVG("reviews"."rating") FROM "reviews" WHERE "reviews"."mentor_id" = $1  [["mentor_id", 8]]
+  [1m[36mSkill Load (0.2ms)[0m  [1mSELECT "skills".* FROM "skills" WHERE "skills"."user_id" = $1[0m  [["user_id", 8]]
+  Rendered users/_user.html.erb (4.4ms)
+  Rendered landing_page/index.js.erb (13.0ms)
+Completed 200 OK in 20ms (Views: 15.2ms | ActiveRecord: 1.9ms)
+
+
+Started GET "/users.json" for ::1 at 2015-08-18 00:50:57 -0400
+Processing by UsersController#index as JSON
+  [1m[35mUser Load (0.4ms)[0m  SELECT "users".* FROM "users" WHERE "users"."status" = 't'
+  [1m[36mHABTM_Categories Load (0.3ms)[0m  [1mSELECT "categories_users".* FROM "categories_users" WHERE "categories_users"."user_id" IN (1, 2, 3, 4, 6, 8)[0m
+  [1m[35mCategory Load (0.6ms)[0m  SELECT "categories".* FROM "categories" WHERE "categories"."id" IN (1)
+  [1m[36mReview Load (0.5ms)[0m  [1mSELECT "reviews".* FROM "reviews" WHERE "reviews"."mentor_id" IN (1, 2, 3, 4, 6, 8)[0m
+Completed 200 OK in 16ms (Views: 12.3ms | ActiveRecord: 1.8ms)
+
+
+Started GET "/" for ::1 at 2015-08-18 00:51:15 -0400
+Processing by LandingPageController#index as HTML
+  [1m[35mInvitation Load (0.3ms)[0m  SELECT "invitations".* FROM "invitations" WHERE "invitations"."mentor_id" IS NULL AND "invitations"."status" = 'f'
+  Rendered landing_page/_map.html.erb (0.0ms)
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."status" = 't' LIMIT 5 OFFSET 0[0m
+  [1m[35mHABTM_Categories Load (0.3ms)[0m  SELECT "categories_users".* FROM "categories_users" WHERE "categories_users"."user_id" IN (1, 2, 3, 4, 6)
+  [1m[36m (0.3ms)[0m  [1mSELECT COUNT(*) FROM "users" WHERE "users"."status" = 't'[0m
+  [1m[35mBasicProfile Load (0.2ms)[0m  SELECT  "basic_profiles".* FROM "basic_profiles" WHERE "basic_profiles"."user_id" = $1 LIMIT 1  [["user_id", 1]]
+  [1m[36m (0.2ms)[0m  [1mSELECT AVG("reviews"."rating") FROM "reviews" WHERE "reviews"."mentor_id" = $1[0m  [["mentor_id", 1]]
+  [1m[35mSkill Load (0.1ms)[0m  SELECT "skills".* FROM "skills" WHERE "skills"."user_id" = $1  [["user_id", 1]]
+  [1m[36mBasicProfile Load (0.1ms)[0m  [1mSELECT  "basic_profiles".* FROM "basic_profiles" WHERE "basic_profiles"."user_id" = $1 LIMIT 1[0m  [["user_id", 2]]
+  [1m[35m (0.2ms)[0m  SELECT AVG("reviews"."rating") FROM "reviews" WHERE "reviews"."mentor_id" = $1  [["mentor_id", 2]]
+  [1m[36mSkill Load (0.2ms)[0m  [1mSELECT "skills".* FROM "skills" WHERE "skills"."user_id" = $1[0m  [["user_id", 2]]
+  [1m[35mBasicProfile Load (0.2ms)[0m  SELECT  "basic_profiles".* FROM "basic_profiles" WHERE "basic_profiles"."user_id" = $1 LIMIT 1  [["user_id", 3]]
+  [1m[36m (0.2ms)[0m  [1mSELECT AVG("reviews"."rating") FROM "reviews" WHERE "reviews"."mentor_id" = $1[0m  [["mentor_id", 3]]
+  [1m[35mSkill Load (0.2ms)[0m  SELECT "skills".* FROM "skills" WHERE "skills"."user_id" = $1  [["user_id", 3]]
+  [1m[36mBasicProfile Load (0.1ms)[0m  [1mSELECT  "basic_profiles".* FROM "basic_profiles" WHERE "basic_profiles"."user_id" = $1 LIMIT 1[0m  [["user_id", 4]]
+  [1m[35m (0.2ms)[0m  SELECT AVG("reviews"."rating") FROM "reviews" WHERE "reviews"."mentor_id" = $1  [["mentor_id", 4]]
+  [1m[36mSkill Load (0.2ms)[0m  [1mSELECT "skills".* FROM "skills" WHERE "skills"."user_id" = $1[0m  [["user_id", 4]]
+  [1m[35mBasicProfile Load (0.1ms)[0m  SELECT  "basic_profiles".* FROM "basic_profiles" WHERE "basic_profiles"."user_id" = $1 LIMIT 1  [["user_id", 6]]
+  [1m[36m (0.2ms)[0m  [1mSELECT AVG("reviews"."rating") FROM "reviews" WHERE "reviews"."mentor_id" = $1[0m  [["mentor_id", 6]]
+  [1m[35mSkill Load (0.2ms)[0m  SELECT "skills".* FROM "skills" WHERE "skills"."user_id" = $1  [["user_id", 6]]
+  Rendered users/_user.html.erb (15.6ms)
+  Rendered landing_page/index.html.erb within layouts/application (23.2ms)
+WARNING: The inline-block mixin is deprecated and will be removed in the next major version release
+         on line 6 of /Users/manentea/.rbenv/versions/2.0.0-p481/lib/ruby/gems/2.0.0/gems/bourbon-4.2.3/app/assets/stylesheets/_bourbon-deprecated-upcoming.scss, in `inline-block'
+         from line 38 of /Users/manentea/Desktop/random/lake-bodom/myCoffee/app/assets/stylesheets/invitations.scss, in `@content'
+         from line 62 of /Users/manentea/.rbenv/versions/2.0.0-p481/lib/ruby/gems/2.0.0/gems/neat-1.7.2/app/assets/stylesheets/grid/_media.scss, in `media'
+         from line 37 of /Users/manentea/Desktop/random/lake-bodom/myCoffee/app/assets/stylesheets/invitations.scss
+         from line 8 of /Users/manentea/Desktop/random/lake-bodom/myCoffee/app/assets/stylesheets/application.scss
+
+
+  Rendered application/_navbar.html.erb (1.6ms)
+  [1m[36mCategory Load (0.5ms)[0m  [1mSELECT "categories".* FROM "categories"[0m
+  Rendered landing_page/_signup.html.erb (5.3ms)
+Completed 200 OK in 1367ms (Views: 1360.9ms | ActiveRecord: 4.2ms)
+
+
+Started GET "/assets/jquery.self-d03a5518f45df77341bdbe6201ba3bfa547ebba8ed64f0ea56bfa5f96ea7c074.js?body=1" for ::1 at 2015-08-18 00:51:17 -0400
+
+
+Started GET "/assets/inbox.self-3461de6a0a511e51dcd0625cb23590652935ae7c3ea8ef8a80c71c2992385cf0.js?body=1" for ::1 at 2015-08-18 00:51:17 -0400
+
+
+Started GET "/assets/jquery_ujs.self-ca5248a2fad13d6bd58ea121318d642f195f0b2dd818b30615f785ff365e8d1f.js?body=1" for ::1 at 2015-08-18 00:51:17 -0400
+
+
+Started GET "/assets/invitations.self-01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b.js?body=1" for ::1 at 2015-08-18 00:51:17 -0400
+
+
+Started GET "/assets/application.self-bcd7a4c1460e10b915945f8aea8c76c4c1b2a25d13ddf057dfabdc07e1a5a20b.css?body=1" for ::1 at 2015-08-18 00:51:17 -0400
+
+
+Started GET "/assets/invite.self-e133006c496ae6cecfa09b57253e998c1ba3a036ffac87673364ca1a733b2686.js?body=1" for ::1 at 2015-08-18 00:51:17 -0400
+
+
+Started GET "/assets/landing_page.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-08-18 00:51:17 -0400
+
+
+Started GET "/assets/linkedin.self-19a187bec6cdb96d6de80a61c16c857c613536adf9138476bd367db38d282635.js?body=1" for ::1 at 2015-08-18 00:51:17 -0400
+
+
+Started GET "/assets/map.self-d6f2a1a282019411e786f39755e417fc9d47174cedec4f3cdc90a51131842b6b.js?body=1" for ::1 at 2015-08-18 00:51:17 -0400
+
+
+Started GET "/assets/map_stick.self-b442d99324d0e99b1c5ced633cc994e7cb0fbebeb4d78b74693477122af61ce8.js?body=1" for ::1 at 2015-08-18 00:51:17 -0400
+
+
+Started GET "/assets/navbar.self-49b187eda3263d8929e075c93b1516fcb31112a33cbc48b8a93d4373b21f087f.js?body=1" for ::1 at 2015-08-18 00:51:17 -0400
+
+
+Started GET "/assets/reviews.self-f211498789a043e54ddf76d9380b9fb7c139233553d9a049cacec7a797a7a5f2.js?body=1" for ::1 at 2015-08-18 00:51:17 -0400
+
+
+Started GET "/assets/tabs.self-bf0e4618237795790e31eb6c93a9629d0d79146578a227eeea0bc2e5b7209d81.js?body=1" for ::1 at 2015-08-18 00:51:17 -0400
+
+
+Started GET "/assets/users.self-6c68a1cdc45493ddcf809e2322d2eb9a7c4bc10aceaa057a57f138e4f4ad511b.js?body=1" for ::1 at 2015-08-18 00:51:17 -0400
+
+
+Started GET "/assets/application.self-43beaadb13072266fed946c38719550e1909ebb9ee5954d311623e59d5a13bba.js?body=1" for ::1 at 2015-08-18 00:51:17 -0400
+
+
+Started GET "/assets/navbutton-bf00fa45d4a4177eca3f4d70c7327cbe7aad2200305127e9d3307b6a5458ed8e.png" for ::1 at 2015-08-18 00:51:17 -0400
+
+
+Started GET "/users.json" for ::1 at 2015-08-18 00:51:17 -0400
+Processing by UsersController#index as JSON
+  [1m[35mUser Load (0.6ms)[0m  SELECT "users".* FROM "users" WHERE "users"."status" = 't'
+  [1m[36mHABTM_Categories Load (0.4ms)[0m  [1mSELECT "categories_users".* FROM "categories_users" WHERE "categories_users"."user_id" IN (1, 2, 3, 4, 6, 8)[0m
+  [1m[35mCategory Load (0.4ms)[0m  SELECT "categories".* FROM "categories" WHERE "categories"."id" IN (1)
+  [1m[36mReview Load (0.3ms)[0m  [1mSELECT "reviews".* FROM "reviews" WHERE "reviews"."mentor_id" IN (1, 2, 3, 4, 6, 8)[0m
+Completed 200 OK in 13ms (Views: 10.5ms | ActiveRecord: 1.7ms)
+
+
+Started GET "/?page=2&_=1439873477288" for ::1 at 2015-08-18 00:51:17 -0400
+Processing by LandingPageController#index as JS
+  Parameters: {"page"=>"2", "_"=>"1439873477288"}
+  [1m[35mInvitation Load (0.5ms)[0m  SELECT "invitations".* FROM "invitations" WHERE "invitations"."mentor_id" IS NULL AND "invitations"."status" = 'f'
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."status" = 't' LIMIT 5 OFFSET 5[0m
+  [1m[35mHABTM_Categories Load (0.3ms)[0m  SELECT "categories_users".* FROM "categories_users" WHERE "categories_users"."user_id" IN (8)
+  [1m[36mCategory Load (0.3ms)[0m  [1mSELECT "categories".* FROM "categories" WHERE "categories"."id" IN (1)[0m
+  [1m[35mBasicProfile Load (0.3ms)[0m  SELECT  "basic_profiles".* FROM "basic_profiles" WHERE "basic_profiles"."user_id" = $1 LIMIT 1  [["user_id", 8]]
+  [1m[36m (0.3ms)[0m  [1mSELECT AVG("reviews"."rating") FROM "reviews" WHERE "reviews"."mentor_id" = $1[0m  [["mentor_id", 8]]
+  [1m[35mSkill Load (0.2ms)[0m  SELECT "skills".* FROM "skills" WHERE "skills"."user_id" = $1  [["user_id", 8]]
+  Rendered users/_user.html.erb (77.0ms)
+  Rendered landing_page/index.js.erb (85.2ms)
+Completed 200 OK in 96ms (Views: 90.0ms | ActiveRecord: 2.1ms)
+
+
+Started GET "/users.json" for ::1 at 2015-08-18 00:51:17 -0400
+Processing by UsersController#index as JSON
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."status" = 't'[0m
+  [1m[35mHABTM_Categories Load (0.3ms)[0m  SELECT "categories_users".* FROM "categories_users" WHERE "categories_users"."user_id" IN (1, 2, 3, 4, 6, 8)
+  [1m[36mCategory Load (0.4ms)[0m  [1mSELECT "categories".* FROM "categories" WHERE "categories"."id" IN (1)[0m
+  [1m[35mReview Load (0.3ms)[0m  SELECT "reviews".* FROM "reviews" WHERE "reviews"."mentor_id" IN (1, 2, 3, 4, 6, 8)
+Completed 200 OK in 12ms (Views: 9.2ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/users.json" for ::1 at 2015-08-18 00:51:37 -0400
+Processing by UsersController#index as JSON
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."status" = 't'[0m
+  [1m[35mHABTM_Categories Load (0.3ms)[0m  SELECT "categories_users".* FROM "categories_users" WHERE "categories_users"."user_id" IN (1, 2, 3, 4, 6, 8)
+  [1m[36mCategory Load (0.3ms)[0m  [1mSELECT "categories".* FROM "categories" WHERE "categories"."id" IN (1)[0m
+  [1m[35mReview Load (0.3ms)[0m  SELECT "reviews".* FROM "reviews" WHERE "reviews"."mentor_id" IN (1, 2, 3, 4, 6, 8)
+Completed 200 OK in 10ms (Views: 8.0ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/users.json" for ::1 at 2015-08-18 00:51:37 -0400
+Processing by UsersController#index as JSON
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."status" = 't'[0m
+  [1m[35mHABTM_Categories Load (0.2ms)[0m  SELECT "categories_users".* FROM "categories_users" WHERE "categories_users"."user_id" IN (1, 2, 3, 4, 6, 8)
+  [1m[36mCategory Load (0.3ms)[0m  [1mSELECT "categories".* FROM "categories" WHERE "categories"."id" IN (1)[0m
+  [1m[35mReview Load (0.3ms)[0m  SELECT "reviews".* FROM "reviews" WHERE "reviews"."mentor_id" IN (1, 2, 3, 4, 6, 8)
+Completed 200 OK in 9ms (Views: 7.3ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/" for ::1 at 2015-08-18 00:51:39 -0400
+Processing by LandingPageController#index as HTML
+  [1m[36mInvitation Load (0.3ms)[0m  [1mSELECT "invitations".* FROM "invitations" WHERE "invitations"."mentor_id" IS NULL AND "invitations"."status" = 'f'[0m
+  Rendered landing_page/_map.html.erb (0.0ms)
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."status" = 't' LIMIT 5 OFFSET 0
+  [1m[36mHABTM_Categories Load (0.3ms)[0m  [1mSELECT "categories_users".* FROM "categories_users" WHERE "categories_users"."user_id" IN (1, 2, 3, 4, 6)[0m
+  [1m[35m (0.4ms)[0m  SELECT COUNT(*) FROM "users" WHERE "users"."status" = 't'
+  [1m[36mBasicProfile Load (0.2ms)[0m  [1mSELECT  "basic_profiles".* FROM "basic_profiles" WHERE "basic_profiles"."user_id" = $1 LIMIT 1[0m  [["user_id", 1]]
+  [1m[35m (0.2ms)[0m  SELECT AVG("reviews"."rating") FROM "reviews" WHERE "reviews"."mentor_id" = $1  [["mentor_id", 1]]
+  [1m[36mSkill Load (0.1ms)[0m  [1mSELECT "skills".* FROM "skills" WHERE "skills"."user_id" = $1[0m  [["user_id", 1]]
+  [1m[35mBasicProfile Load (0.2ms)[0m  SELECT  "basic_profiles".* FROM "basic_profiles" WHERE "basic_profiles"."user_id" = $1 LIMIT 1  [["user_id", 2]]
+  [1m[36m (0.2ms)[0m  [1mSELECT AVG("reviews"."rating") FROM "reviews" WHERE "reviews"."mentor_id" = $1[0m  [["mentor_id", 2]]
+  [1m[35mSkill Load (0.2ms)[0m  SELECT "skills".* FROM "skills" WHERE "skills"."user_id" = $1  [["user_id", 2]]
+  [1m[36mBasicProfile Load (0.1ms)[0m  [1mSELECT  "basic_profiles".* FROM "basic_profiles" WHERE "basic_profiles"."user_id" = $1 LIMIT 1[0m  [["user_id", 3]]
+  [1m[35m (0.2ms)[0m  SELECT AVG("reviews"."rating") FROM "reviews" WHERE "reviews"."mentor_id" = $1  [["mentor_id", 3]]
+  [1m[36mSkill Load (0.2ms)[0m  [1mSELECT "skills".* FROM "skills" WHERE "skills"."user_id" = $1[0m  [["user_id", 3]]
+  [1m[35mBasicProfile Load (0.1ms)[0m  SELECT  "basic_profiles".* FROM "basic_profiles" WHERE "basic_profiles"."user_id" = $1 LIMIT 1  [["user_id", 4]]
+  [1m[36m (0.1ms)[0m  [1mSELECT AVG("reviews"."rating") FROM "reviews" WHERE "reviews"."mentor_id" = $1[0m  [["mentor_id", 4]]
+  [1m[35mSkill Load (0.2ms)[0m  SELECT "skills".* FROM "skills" WHERE "skills"."user_id" = $1  [["user_id", 4]]
+  [1m[36mBasicProfile Load (0.2ms)[0m  [1mSELECT  "basic_profiles".* FROM "basic_profiles" WHERE "basic_profiles"."user_id" = $1 LIMIT 1[0m  [["user_id", 6]]
+  [1m[35m (0.2ms)[0m  SELECT AVG("reviews"."rating") FROM "reviews" WHERE "reviews"."mentor_id" = $1  [["mentor_id", 6]]
+  [1m[36mSkill Load (0.2ms)[0m  [1mSELECT "skills".* FROM "skills" WHERE "skills"."user_id" = $1[0m  [["user_id", 6]]
+  Rendered users/_user.html.erb (15.2ms)
+  Rendered landing_page/index.html.erb within layouts/application (25.2ms)
+  Rendered application/_navbar.html.erb (1.5ms)
+  [1m[35mCategory Load (0.3ms)[0m  SELECT "categories".* FROM "categories"
+  Rendered landing_page/_signup.html.erb (6.4ms)
+Completed 200 OK in 113ms (Views: 107.2ms | ActiveRecord: 4.1ms)
+
+
+Started GET "/assets/jquery_ujs.self-ca5248a2fad13d6bd58ea121318d642f195f0b2dd818b30615f785ff365e8d1f.js?body=1" for ::1 at 2015-08-18 00:51:39 -0400
+
+
+Started GET "/assets/jquery.self-d03a5518f45df77341bdbe6201ba3bfa547ebba8ed64f0ea56bfa5f96ea7c074.js?body=1" for ::1 at 2015-08-18 00:51:39 -0400
+
+
+Started GET "/assets/invite.self-e133006c496ae6cecfa09b57253e998c1ba3a036ffac87673364ca1a733b2686.js?body=1" for ::1 at 2015-08-18 00:51:39 -0400
+
+
+Started GET "/assets/landing_page.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-08-18 00:51:39 -0400
+
+
+Started GET "/assets/inbox.self-3461de6a0a511e51dcd0625cb23590652935ae7c3ea8ef8a80c71c2992385cf0.js?body=1" for ::1 at 2015-08-18 00:51:39 -0400
+
+
+Started GET "/assets/invitations.self-01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b.js?body=1" for ::1 at 2015-08-18 00:51:39 -0400
+
+
+Started GET "/assets/application.self-9c29550cf9049aed59ee54b1dfad93b2d2af59771c1b47fec4f548b817ff25f8.css?body=1" for ::1 at 2015-08-18 00:51:39 -0400
+
+
+Started GET "/assets/linkedin.self-19a187bec6cdb96d6de80a61c16c857c613536adf9138476bd367db38d282635.js?body=1" for ::1 at 2015-08-18 00:51:39 -0400
+
+
+Started GET "/assets/map_stick.self-b442d99324d0e99b1c5ced633cc994e7cb0fbebeb4d78b74693477122af61ce8.js?body=1" for ::1 at 2015-08-18 00:51:39 -0400
+
+
+Started GET "/assets/map.self-d6f2a1a282019411e786f39755e417fc9d47174cedec4f3cdc90a51131842b6b.js?body=1" for ::1 at 2015-08-18 00:51:39 -0400
+
+
+Started GET "/assets/navbar.self-49b187eda3263d8929e075c93b1516fcb31112a33cbc48b8a93d4373b21f087f.js?body=1" for ::1 at 2015-08-18 00:51:39 -0400
+
+
+Started GET "/assets/reviews.self-f211498789a043e54ddf76d9380b9fb7c139233553d9a049cacec7a797a7a5f2.js?body=1" for ::1 at 2015-08-18 00:51:39 -0400
+
+
+Started GET "/assets/tabs.self-bf0e4618237795790e31eb6c93a9629d0d79146578a227eeea0bc2e5b7209d81.js?body=1" for ::1 at 2015-08-18 00:51:39 -0400
+
+
+Started GET "/assets/users.self-6c68a1cdc45493ddcf809e2322d2eb9a7c4bc10aceaa057a57f138e4f4ad511b.js?body=1" for ::1 at 2015-08-18 00:51:39 -0400
+
+
+Started GET "/assets/application.self-43beaadb13072266fed946c38719550e1909ebb9ee5954d311623e59d5a13bba.js?body=1" for ::1 at 2015-08-18 00:51:39 -0400
+
+
+Started GET "/assets/navbutton-bf00fa45d4a4177eca3f4d70c7327cbe7aad2200305127e9d3307b6a5458ed8e.png" for ::1 at 2015-08-18 00:51:39 -0400
+
+
+Started GET "/users.json" for ::1 at 2015-08-18 00:51:40 -0400
+Processing by UsersController#index as JSON
+  [1m[36mUser Load (2.6ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."status" = 't'[0m
+  [1m[35mHABTM_Categories Load (0.9ms)[0m  SELECT "categories_users".* FROM "categories_users" WHERE "categories_users"."user_id" IN (1, 2, 3, 4, 6, 8)
+  [1m[36mCategory Load (0.6ms)[0m  [1mSELECT "categories".* FROM "categories" WHERE "categories"."id" IN (1)[0m
+  [1m[35mReview Load (0.5ms)[0m  SELECT "reviews".* FROM "reviews" WHERE "reviews"."mentor_id" IN (1, 2, 3, 4, 6, 8)
+Completed 200 OK in 21ms (Views: 14.6ms | ActiveRecord: 4.6ms)
+
+
+Started GET "/?page=2&_=1439873500239" for ::1 at 2015-08-18 00:51:40 -0400
+Processing by LandingPageController#index as JS
+  Parameters: {"page"=>"2", "_"=>"1439873500239"}
+  [1m[36mInvitation Load (0.4ms)[0m  [1mSELECT "invitations".* FROM "invitations" WHERE "invitations"."mentor_id" IS NULL AND "invitations"."status" = 'f'[0m
+  [1m[35mUser Load (0.4ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."status" = 't' LIMIT 5 OFFSET 5
+  [1m[36mHABTM_Categories Load (0.3ms)[0m  [1mSELECT "categories_users".* FROM "categories_users" WHERE "categories_users"."user_id" IN (8)[0m
+  [1m[35mCategory Load (0.4ms)[0m  SELECT "categories".* FROM "categories" WHERE "categories"."id" IN (1)
+  [1m[36mBasicProfile Load (0.2ms)[0m  [1mSELECT  "basic_profiles".* FROM "basic_profiles" WHERE "basic_profiles"."user_id" = $1 LIMIT 1[0m  [["user_id", 8]]
+  [1m[35m (0.2ms)[0m  SELECT AVG("reviews"."rating") FROM "reviews" WHERE "reviews"."mentor_id" = $1  [["mentor_id", 8]]
+  [1m[36mSkill Load (0.2ms)[0m  [1mSELECT "skills".* FROM "skills" WHERE "skills"."user_id" = $1[0m  [["user_id", 8]]
+  Rendered users/_user.html.erb (3.8ms)
+  Rendered landing_page/index.js.erb (13.0ms)
+Completed 200 OK in 21ms (Views: 16.3ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/users.json" for ::1 at 2015-08-18 00:51:40 -0400
+Processing by UsersController#index as JSON
+  [1m[35mUser Load (0.4ms)[0m  SELECT "users".* FROM "users" WHERE "users"."status" = 't'
+  [1m[36mHABTM_Categories Load (0.3ms)[0m  [1mSELECT "categories_users".* FROM "categories_users" WHERE "categories_users"."user_id" IN (1, 2, 3, 4, 6, 8)[0m
+  [1m[35mCategory Load (0.4ms)[0m  SELECT "categories".* FROM "categories" WHERE "categories"."id" IN (1)
+  [1m[36mReview Load (0.3ms)[0m  [1mSELECT "reviews".* FROM "reviews" WHERE "reviews"."mentor_id" IN (1, 2, 3, 4, 6, 8)[0m
+Completed 200 OK in 12ms (Views: 9.9ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/" for ::1 at 2015-08-18 00:51:57 -0400
+Processing by LandingPageController#index as HTML
+  [1m[35mInvitation Load (0.3ms)[0m  SELECT "invitations".* FROM "invitations" WHERE "invitations"."mentor_id" IS NULL AND "invitations"."status" = 'f'
+  Rendered landing_page/_map.html.erb (0.0ms)
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."status" = 't' LIMIT 5 OFFSET 0[0m
+  [1m[35mHABTM_Categories Load (0.3ms)[0m  SELECT "categories_users".* FROM "categories_users" WHERE "categories_users"."user_id" IN (1, 2, 3, 4, 6)
+  [1m[36m (0.3ms)[0m  [1mSELECT COUNT(*) FROM "users" WHERE "users"."status" = 't'[0m
+  [1m[35mBasicProfile Load (0.2ms)[0m  SELECT  "basic_profiles".* FROM "basic_profiles" WHERE "basic_profiles"."user_id" = $1 LIMIT 1  [["user_id", 1]]
+  [1m[36m (0.2ms)[0m  [1mSELECT AVG("reviews"."rating") FROM "reviews" WHERE "reviews"."mentor_id" = $1[0m  [["mentor_id", 1]]
+  [1m[35mSkill Load (0.2ms)[0m  SELECT "skills".* FROM "skills" WHERE "skills"."user_id" = $1  [["user_id", 1]]
+  [1m[36mBasicProfile Load (0.1ms)[0m  [1mSELECT  "basic_profiles".* FROM "basic_profiles" WHERE "basic_profiles"."user_id" = $1 LIMIT 1[0m  [["user_id", 2]]
+  [1m[35m (0.2ms)[0m  SELECT AVG("reviews"."rating") FROM "reviews" WHERE "reviews"."mentor_id" = $1  [["mentor_id", 2]]
+  [1m[36mSkill Load (0.2ms)[0m  [1mSELECT "skills".* FROM "skills" WHERE "skills"."user_id" = $1[0m  [["user_id", 2]]
+  [1m[35mBasicProfile Load (0.1ms)[0m  SELECT  "basic_profiles".* FROM "basic_profiles" WHERE "basic_profiles"."user_id" = $1 LIMIT 1  [["user_id", 3]]
+  [1m[36m (0.2ms)[0m  [1mSELECT AVG("reviews"."rating") FROM "reviews" WHERE "reviews"."mentor_id" = $1[0m  [["mentor_id", 3]]
+  [1m[35mSkill Load (0.2ms)[0m  SELECT "skills".* FROM "skills" WHERE "skills"."user_id" = $1  [["user_id", 3]]
+  [1m[36mBasicProfile Load (0.1ms)[0m  [1mSELECT  "basic_profiles".* FROM "basic_profiles" WHERE "basic_profiles"."user_id" = $1 LIMIT 1[0m  [["user_id", 4]]
+  [1m[35m (0.2ms)[0m  SELECT AVG("reviews"."rating") FROM "reviews" WHERE "reviews"."mentor_id" = $1  [["mentor_id", 4]]
+  [1m[36mSkill Load (0.1ms)[0m  [1mSELECT "skills".* FROM "skills" WHERE "skills"."user_id" = $1[0m  [["user_id", 4]]
+  [1m[35mBasicProfile Load (0.1ms)[0m  SELECT  "basic_profiles".* FROM "basic_profiles" WHERE "basic_profiles"."user_id" = $1 LIMIT 1  [["user_id", 6]]
+  [1m[36m (0.2ms)[0m  [1mSELECT AVG("reviews"."rating") FROM "reviews" WHERE "reviews"."mentor_id" = $1[0m  [["mentor_id", 6]]
+  [1m[35mSkill Load (0.1ms)[0m  SELECT "skills".* FROM "skills" WHERE "skills"."user_id" = $1  [["user_id", 6]]
+  Rendered users/_user.html.erb (13.5ms)
+  Rendered landing_page/index.html.erb within layouts/application (20.6ms)
+WARNING: The inline-block mixin is deprecated and will be removed in the next major version release
+         on line 6 of /Users/manentea/.rbenv/versions/2.0.0-p481/lib/ruby/gems/2.0.0/gems/bourbon-4.2.3/app/assets/stylesheets/_bourbon-deprecated-upcoming.scss, in `inline-block'
+         from line 38 of /Users/manentea/Desktop/random/lake-bodom/myCoffee/app/assets/stylesheets/invitations.scss, in `@content'
+         from line 62 of /Users/manentea/.rbenv/versions/2.0.0-p481/lib/ruby/gems/2.0.0/gems/neat-1.7.2/app/assets/stylesheets/grid/_media.scss, in `media'
+         from line 37 of /Users/manentea/Desktop/random/lake-bodom/myCoffee/app/assets/stylesheets/invitations.scss
+         from line 8 of /Users/manentea/Desktop/random/lake-bodom/myCoffee/app/assets/stylesheets/application.scss
+
+
+  Rendered application/_navbar.html.erb (1.4ms)
+  [1m[36mCategory Load (0.4ms)[0m  [1mSELECT "categories".* FROM "categories"[0m
+  Rendered landing_page/_signup.html.erb (6.2ms)
+Completed 200 OK in 1373ms (Views: 1367.3ms | ActiveRecord: 3.8ms)
+
+
+Started GET "/assets/jquery.self-d03a5518f45df77341bdbe6201ba3bfa547ebba8ed64f0ea56bfa5f96ea7c074.js?body=1" for ::1 at 2015-08-18 00:51:58 -0400
+
+
+Started GET "/assets/invite.self-e133006c496ae6cecfa09b57253e998c1ba3a036ffac87673364ca1a733b2686.js?body=1" for ::1 at 2015-08-18 00:51:58 -0400
+
+
+Started GET "/assets/jquery_ujs.self-ca5248a2fad13d6bd58ea121318d642f195f0b2dd818b30615f785ff365e8d1f.js?body=1" for ::1 at 2015-08-18 00:51:58 -0400
+
+
+Started GET "/assets/landing_page.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-08-18 00:51:58 -0400
+
+
+Started GET "/assets/inbox.self-3461de6a0a511e51dcd0625cb23590652935ae7c3ea8ef8a80c71c2992385cf0.js?body=1" for ::1 at 2015-08-18 00:51:58 -0400
+
+
+Started GET "/assets/invitations.self-01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b.js?body=1" for ::1 at 2015-08-18 00:51:58 -0400
+
+
+Started GET "/assets/application.self-085d44ef711ffdd23601cc154c980b34081af0d8a0a5130e2cbaba1a1ac07d9e.css?body=1" for ::1 at 2015-08-18 00:51:58 -0400
+
+
+Started GET "/assets/linkedin.self-19a187bec6cdb96d6de80a61c16c857c613536adf9138476bd367db38d282635.js?body=1" for ::1 at 2015-08-18 00:51:58 -0400
+
+
+Started GET "/assets/map.self-d6f2a1a282019411e786f39755e417fc9d47174cedec4f3cdc90a51131842b6b.js?body=1" for ::1 at 2015-08-18 00:51:59 -0400
+
+
+Started GET "/assets/map_stick.self-b442d99324d0e99b1c5ced633cc994e7cb0fbebeb4d78b74693477122af61ce8.js?body=1" for ::1 at 2015-08-18 00:51:59 -0400
+
+
+Started GET "/assets/reviews.self-f211498789a043e54ddf76d9380b9fb7c139233553d9a049cacec7a797a7a5f2.js?body=1" for ::1 at 2015-08-18 00:51:59 -0400
+
+
+Started GET "/assets/navbar.self-49b187eda3263d8929e075c93b1516fcb31112a33cbc48b8a93d4373b21f087f.js?body=1" for ::1 at 2015-08-18 00:51:59 -0400
+
+
+Started GET "/assets/tabs.self-bf0e4618237795790e31eb6c93a9629d0d79146578a227eeea0bc2e5b7209d81.js?body=1" for ::1 at 2015-08-18 00:51:59 -0400
+
+
+Started GET "/assets/users.self-6c68a1cdc45493ddcf809e2322d2eb9a7c4bc10aceaa057a57f138e4f4ad511b.js?body=1" for ::1 at 2015-08-18 00:51:59 -0400
+
+
+Started GET "/assets/application.self-43beaadb13072266fed946c38719550e1909ebb9ee5954d311623e59d5a13bba.js?body=1" for ::1 at 2015-08-18 00:51:59 -0400
+
+
+Started GET "/assets/navbutton-bf00fa45d4a4177eca3f4d70c7327cbe7aad2200305127e9d3307b6a5458ed8e.png" for ::1 at 2015-08-18 00:51:59 -0400
+
+
+Started GET "/users.json" for ::1 at 2015-08-18 00:52:01 -0400
+Processing by UsersController#index as JSON
+  [1m[35mUser Load (0.4ms)[0m  SELECT "users".* FROM "users" WHERE "users"."status" = 't'
+  [1m[36mHABTM_Categories Load (1.0ms)[0m  [1mSELECT "categories_users".* FROM "categories_users" WHERE "categories_users"."user_id" IN (1, 2, 3, 4, 6, 8)[0m
+  [1m[35mCategory Load (0.9ms)[0m  SELECT "categories".* FROM "categories" WHERE "categories"."id" IN (1)
+  [1m[36mReview Load (0.5ms)[0m  [1mSELECT "reviews".* FROM "reviews" WHERE "reviews"."mentor_id" IN (1, 2, 3, 4, 6, 8)[0m
+Completed 200 OK in 17ms (Views: 12.8ms | ActiveRecord: 2.7ms)
+
+
+Started GET "/?page=2&_=1439873521229" for ::1 at 2015-08-18 00:52:01 -0400
+Processing by LandingPageController#index as JS
+  Parameters: {"page"=>"2", "_"=>"1439873521229"}
+  [1m[35mInvitation Load (0.3ms)[0m  SELECT "invitations".* FROM "invitations" WHERE "invitations"."mentor_id" IS NULL AND "invitations"."status" = 'f'
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."status" = 't' LIMIT 5 OFFSET 5[0m
+  [1m[35mHABTM_Categories Load (0.4ms)[0m  SELECT "categories_users".* FROM "categories_users" WHERE "categories_users"."user_id" IN (8)
+  [1m[36mCategory Load (0.4ms)[0m  [1mSELECT "categories".* FROM "categories" WHERE "categories"."id" IN (1)[0m
+  [1m[35mBasicProfile Load (0.3ms)[0m  SELECT  "basic_profiles".* FROM "basic_profiles" WHERE "basic_profiles"."user_id" = $1 LIMIT 1  [["user_id", 8]]
+  [1m[36m (0.3ms)[0m  [1mSELECT AVG("reviews"."rating") FROM "reviews" WHERE "reviews"."mentor_id" = $1[0m  [["mentor_id", 8]]
+  [1m[35mSkill Load (0.2ms)[0m  SELECT "skills".* FROM "skills" WHERE "skills"."user_id" = $1  [["user_id", 8]]
+  Rendered users/_user.html.erb (4.8ms)
+  Rendered landing_page/index.js.erb (14.1ms)
+Completed 200 OK in 21ms (Views: 16.7ms | ActiveRecord: 2.2ms)
+
+
+Started GET "/users.json" for ::1 at 2015-08-18 00:52:01 -0400
+Processing by UsersController#index as JSON
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."status" = 't'[0m
+  [1m[35mHABTM_Categories Load (0.3ms)[0m  SELECT "categories_users".* FROM "categories_users" WHERE "categories_users"."user_id" IN (1, 2, 3, 4, 6, 8)
+  [1m[36mCategory Load (0.3ms)[0m  [1mSELECT "categories".* FROM "categories" WHERE "categories"."id" IN (1)[0m
+  [1m[35mReview Load (0.5ms)[0m  SELECT "reviews".* FROM "reviews" WHERE "reviews"."mentor_id" IN (1, 2, 3, 4, 6, 8)
+Completed 200 OK in 11ms (Views: 8.6ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/users.json" for ::1 at 2015-08-18 00:52:22 -0400
+Processing by UsersController#index as JSON
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."status" = 't'[0m
+  [1m[35mHABTM_Categories Load (0.3ms)[0m  SELECT "categories_users".* FROM "categories_users" WHERE "categories_users"."user_id" IN (1, 2, 3, 4, 6, 8)
+  [1m[36mCategory Load (0.3ms)[0m  [1mSELECT "categories".* FROM "categories" WHERE "categories"."id" IN (1)[0m
+  [1m[35mReview Load (0.3ms)[0m  SELECT "reviews".* FROM "reviews" WHERE "reviews"."mentor_id" IN (1, 2, 3, 4, 6, 8)
+Completed 200 OK in 10ms (Views: 7.9ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/users.json" for ::1 at 2015-08-18 00:52:22 -0400
+Processing by UsersController#index as JSON
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."status" = 't'[0m
+  [1m[35mHABTM_Categories Load (0.3ms)[0m  SELECT "categories_users".* FROM "categories_users" WHERE "categories_users"."user_id" IN (1, 2, 3, 4, 6, 8)
+  [1m[36mCategory Load (0.3ms)[0m  [1mSELECT "categories".* FROM "categories" WHERE "categories"."id" IN (1)[0m
+  [1m[35mReview Load (0.3ms)[0m  SELECT "reviews".* FROM "reviews" WHERE "reviews"."mentor_id" IN (1, 2, 3, 4, 6, 8)
+Completed 200 OK in 10ms (Views: 7.9ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/users.json" for ::1 at 2015-08-18 00:52:50 -0400
+Processing by UsersController#index as JSON
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."status" = 't'[0m
+  [1m[35mHABTM_Categories Load (0.3ms)[0m  SELECT "categories_users".* FROM "categories_users" WHERE "categories_users"."user_id" IN (1, 2, 3, 4, 6, 8)
+  [1m[36mCategory Load (0.3ms)[0m  [1mSELECT "categories".* FROM "categories" WHERE "categories"."id" IN (1)[0m
+  [1m[35mReview Load (0.3ms)[0m  SELECT "reviews".* FROM "reviews" WHERE "reviews"."mentor_id" IN (1, 2, 3, 4, 6, 8)
+Completed 200 OK in 11ms (Views: 8.4ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/users.json" for ::1 at 2015-08-18 00:52:50 -0400
+Processing by UsersController#index as JSON
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."status" = 't'[0m
+  [1m[35mHABTM_Categories Load (0.2ms)[0m  SELECT "categories_users".* FROM "categories_users" WHERE "categories_users"."user_id" IN (1, 2, 3, 4, 6, 8)
+  [1m[36mCategory Load (0.3ms)[0m  [1mSELECT "categories".* FROM "categories" WHERE "categories"."id" IN (1)[0m
+  [1m[35mReview Load (0.3ms)[0m  SELECT "reviews".* FROM "reviews" WHERE "reviews"."mentor_id" IN (1, 2, 3, 4, 6, 8)
+Completed 200 OK in 9ms (Views: 7.1ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/users.json" for ::1 at 2015-08-18 00:53:10 -0400
+Processing by UsersController#index as JSON
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."status" = 't'[0m
+  [1m[35mHABTM_Categories Load (0.3ms)[0m  SELECT "categories_users".* FROM "categories_users" WHERE "categories_users"."user_id" IN (1, 2, 3, 4, 6, 8)
+  [1m[36mCategory Load (0.3ms)[0m  [1mSELECT "categories".* FROM "categories" WHERE "categories"."id" IN (1)[0m
+  [1m[35mReview Load (0.2ms)[0m  SELECT "reviews".* FROM "reviews" WHERE "reviews"."mentor_id" IN (1, 2, 3, 4, 6, 8)
+Completed 200 OK in 10ms (Views: 7.7ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/users.json" for ::1 at 2015-08-18 00:53:11 -0400
+Processing by UsersController#index as JSON
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."status" = 't'[0m
+  [1m[35mHABTM_Categories Load (0.3ms)[0m  SELECT "categories_users".* FROM "categories_users" WHERE "categories_users"."user_id" IN (1, 2, 3, 4, 6, 8)
+  [1m[36mCategory Load (0.3ms)[0m  [1mSELECT "categories".* FROM "categories" WHERE "categories"."id" IN (1)[0m
+  [1m[35mReview Load (0.3ms)[0m  SELECT "reviews".* FROM "reviews" WHERE "reviews"."mentor_id" IN (1, 2, 3, 4, 6, 8)
+Completed 200 OK in 79ms (Views: 77.0ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/users.json" for ::1 at 2015-08-18 00:53:35 -0400
+Processing by UsersController#index as JSON
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."status" = 't'[0m
+  [1m[35mHABTM_Categories Load (0.3ms)[0m  SELECT "categories_users".* FROM "categories_users" WHERE "categories_users"."user_id" IN (1, 2, 3, 4, 6, 8)
+  [1m[36mCategory Load (0.3ms)[0m  [1mSELECT "categories".* FROM "categories" WHERE "categories"."id" IN (1)[0m
+  [1m[35mReview Load (0.3ms)[0m  SELECT "reviews".* FROM "reviews" WHERE "reviews"."mentor_id" IN (1, 2, 3, 4, 6, 8)
+Completed 200 OK in 9ms (Views: 7.0ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/users.json" for ::1 at 2015-08-18 00:53:35 -0400
+Processing by UsersController#index as JSON
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."status" = 't'[0m
+  [1m[35mHABTM_Categories Load (0.3ms)[0m  SELECT "categories_users".* FROM "categories_users" WHERE "categories_users"."user_id" IN (1, 2, 3, 4, 6, 8)
+  [1m[36mCategory Load (0.3ms)[0m  [1mSELECT "categories".* FROM "categories" WHERE "categories"."id" IN (1)[0m
+  [1m[35mReview Load (0.3ms)[0m  SELECT "reviews".* FROM "reviews" WHERE "reviews"."mentor_id" IN (1, 2, 3, 4, 6, 8)
+Completed 200 OK in 9ms (Views: 7.3ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/" for ::1 at 2015-08-18 00:53:43 -0400
+Processing by LandingPageController#index as HTML
+  [1m[36mInvitation Load (0.3ms)[0m  [1mSELECT "invitations".* FROM "invitations" WHERE "invitations"."mentor_id" IS NULL AND "invitations"."status" = 'f'[0m
+  Rendered landing_page/_map.html.erb (0.3ms)
+  [1m[35mUser Load (0.4ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."status" = 't' LIMIT 5 OFFSET 0
+  [1m[36mHABTM_Categories Load (0.3ms)[0m  [1mSELECT "categories_users".* FROM "categories_users" WHERE "categories_users"."user_id" IN (1, 2, 3, 4, 6)[0m
+  [1m[35m (0.3ms)[0m  SELECT COUNT(*) FROM "users" WHERE "users"."status" = 't'
+  [1m[36mBasicProfile Load (0.2ms)[0m  [1mSELECT  "basic_profiles".* FROM "basic_profiles" WHERE "basic_profiles"."user_id" = $1 LIMIT 1[0m  [["user_id", 1]]
+  [1m[35m (0.4ms)[0m  SELECT AVG("reviews"."rating") FROM "reviews" WHERE "reviews"."mentor_id" = $1  [["mentor_id", 1]]
+  [1m[36mSkill Load (0.4ms)[0m  [1mSELECT "skills".* FROM "skills" WHERE "skills"."user_id" = $1[0m  [["user_id", 1]]
+  [1m[35mBasicProfile Load (0.2ms)[0m  SELECT  "basic_profiles".* FROM "basic_profiles" WHERE "basic_profiles"."user_id" = $1 LIMIT 1  [["user_id", 2]]
+  [1m[36m (0.2ms)[0m  [1mSELECT AVG("reviews"."rating") FROM "reviews" WHERE "reviews"."mentor_id" = $1[0m  [["mentor_id", 2]]
+  [1m[35mSkill Load (0.2ms)[0m  SELECT "skills".* FROM "skills" WHERE "skills"."user_id" = $1  [["user_id", 2]]
+  [1m[36mBasicProfile Load (0.2ms)[0m  [1mSELECT  "basic_profiles".* FROM "basic_profiles" WHERE "basic_profiles"."user_id" = $1 LIMIT 1[0m  [["user_id", 3]]
+  [1m[35m (0.2ms)[0m  SELECT AVG("reviews"."rating") FROM "reviews" WHERE "reviews"."mentor_id" = $1  [["mentor_id", 3]]
+  [1m[36mSkill Load (0.1ms)[0m  [1mSELECT "skills".* FROM "skills" WHERE "skills"."user_id" = $1[0m  [["user_id", 3]]
+  [1m[35mBasicProfile Load (0.1ms)[0m  SELECT  "basic_profiles".* FROM "basic_profiles" WHERE "basic_profiles"."user_id" = $1 LIMIT 1  [["user_id", 4]]
+  [1m[36m (0.2ms)[0m  [1mSELECT AVG("reviews"."rating") FROM "reviews" WHERE "reviews"."mentor_id" = $1[0m  [["mentor_id", 4]]
+  [1m[35mSkill Load (0.2ms)[0m  SELECT "skills".* FROM "skills" WHERE "skills"."user_id" = $1  [["user_id", 4]]
+  [1m[36mBasicProfile Load (0.1ms)[0m  [1mSELECT  "basic_profiles".* FROM "basic_profiles" WHERE "basic_profiles"."user_id" = $1 LIMIT 1[0m  [["user_id", 6]]
+  [1m[35m (0.2ms)[0m  SELECT AVG("reviews"."rating") FROM "reviews" WHERE "reviews"."mentor_id" = $1  [["mentor_id", 6]]
+  [1m[36mSkill Load (0.2ms)[0m  [1mSELECT "skills".* FROM "skills" WHERE "skills"."user_id" = $1[0m  [["user_id", 6]]
+  Rendered users/_user.html.erb (17.9ms)
+  Rendered landing_page/index.html.erb within layouts/application (26.8ms)
+WARNING: The inline-block mixin is deprecated and will be removed in the next major version release
+         on line 6 of /Users/manentea/.rbenv/versions/2.0.0-p481/lib/ruby/gems/2.0.0/gems/bourbon-4.2.3/app/assets/stylesheets/_bourbon-deprecated-upcoming.scss, in `inline-block'
+         from line 38 of /Users/manentea/Desktop/random/lake-bodom/myCoffee/app/assets/stylesheets/invitations.scss, in `@content'
+         from line 62 of /Users/manentea/.rbenv/versions/2.0.0-p481/lib/ruby/gems/2.0.0/gems/neat-1.7.2/app/assets/stylesheets/grid/_media.scss, in `media'
+         from line 37 of /Users/manentea/Desktop/random/lake-bodom/myCoffee/app/assets/stylesheets/invitations.scss
+         from line 8 of /Users/manentea/Desktop/random/lake-bodom/myCoffee/app/assets/stylesheets/application.scss
+
+
+  Rendered application/_navbar.html.erb (1.8ms)
+  [1m[35mCategory Load (0.4ms)[0m  SELECT "categories".* FROM "categories"
+  Rendered landing_page/_signup.html.erb (6.2ms)
+Completed 200 OK in 1315ms (Views: 1308.0ms | ActiveRecord: 4.8ms)
+
+
+Started GET "/assets/invitations.self-01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b.js?body=1" for ::1 at 2015-08-18 00:53:44 -0400
+
+
+Started GET "/assets/landing_page.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-08-18 00:53:44 -0400
+
+
+Started GET "/assets/jquery.self-d03a5518f45df77341bdbe6201ba3bfa547ebba8ed64f0ea56bfa5f96ea7c074.js?body=1" for ::1 at 2015-08-18 00:53:44 -0400
+
+
+Started GET "/assets/invite.self-e133006c496ae6cecfa09b57253e998c1ba3a036ffac87673364ca1a733b2686.js?body=1" for ::1 at 2015-08-18 00:53:44 -0400
+
+
+Started GET "/assets/inbox.self-3461de6a0a511e51dcd0625cb23590652935ae7c3ea8ef8a80c71c2992385cf0.js?body=1" for ::1 at 2015-08-18 00:53:44 -0400
+
+
+Started GET "/assets/jquery_ujs.self-ca5248a2fad13d6bd58ea121318d642f195f0b2dd818b30615f785ff365e8d1f.js?body=1" for ::1 at 2015-08-18 00:53:44 -0400
+
+
+Started GET "/assets/application.self-3e63cca0303a11f9e82cc91b106bf977673298a932e4f57f6c279ff6a2fc3936.css?body=1" for ::1 at 2015-08-18 00:53:45 -0400
+
+
+Started GET "/assets/linkedin.self-19a187bec6cdb96d6de80a61c16c857c613536adf9138476bd367db38d282635.js?body=1" for ::1 at 2015-08-18 00:53:45 -0400
+
+
+Started GET "/assets/map.self-d6f2a1a282019411e786f39755e417fc9d47174cedec4f3cdc90a51131842b6b.js?body=1" for ::1 at 2015-08-18 00:53:45 -0400
+
+
+Started GET "/assets/map_stick.self-b442d99324d0e99b1c5ced633cc994e7cb0fbebeb4d78b74693477122af61ce8.js?body=1" for ::1 at 2015-08-18 00:53:45 -0400
+
+
+Started GET "/assets/navbar.self-49b187eda3263d8929e075c93b1516fcb31112a33cbc48b8a93d4373b21f087f.js?body=1" for ::1 at 2015-08-18 00:53:45 -0400
+
+
+Started GET "/assets/reviews.self-f211498789a043e54ddf76d9380b9fb7c139233553d9a049cacec7a797a7a5f2.js?body=1" for ::1 at 2015-08-18 00:53:45 -0400
+
+
+Started GET "/assets/tabs.self-bf0e4618237795790e31eb6c93a9629d0d79146578a227eeea0bc2e5b7209d81.js?body=1" for ::1 at 2015-08-18 00:53:45 -0400
+
+
+Started GET "/assets/users.self-6c68a1cdc45493ddcf809e2322d2eb9a7c4bc10aceaa057a57f138e4f4ad511b.js?body=1" for ::1 at 2015-08-18 00:53:45 -0400
+
+
+Started GET "/assets/application.self-43beaadb13072266fed946c38719550e1909ebb9ee5954d311623e59d5a13bba.js?body=1" for ::1 at 2015-08-18 00:53:45 -0400
+
+
+Started GET "/assets/navbutton-bf00fa45d4a4177eca3f4d70c7327cbe7aad2200305127e9d3307b6a5458ed8e.png" for ::1 at 2015-08-18 00:53:45 -0400
+
+
+Started GET "/users.json" for ::1 at 2015-08-18 00:53:45 -0400
+Processing by UsersController#index as JSON
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."status" = 't'[0m
+  [1m[35mHABTM_Categories Load (0.3ms)[0m  SELECT "categories_users".* FROM "categories_users" WHERE "categories_users"."user_id" IN (1, 2, 3, 4, 6, 8)
+  [1m[36mCategory Load (0.4ms)[0m  [1mSELECT "categories".* FROM "categories" WHERE "categories"."id" IN (1)[0m
+  [1m[35mReview Load (0.3ms)[0m  SELECT "reviews".* FROM "reviews" WHERE "reviews"."mentor_id" IN (1, 2, 3, 4, 6, 8)
+Completed 200 OK in 11ms (Views: 8.9ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/users.json" for ::1 at 2015-08-18 00:53:45 -0400
+Processing by UsersController#index as JSON
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."status" = 't'[0m
+  [1m[35mHABTM_Categories Load (2.2ms)[0m  SELECT "categories_users".* FROM "categories_users" WHERE "categories_users"."user_id" IN (1, 2, 3, 4, 6, 8)
+  [1m[36mCategory Load (0.4ms)[0m  [1mSELECT "categories".* FROM "categories" WHERE "categories"."id" IN (1)[0m
+  [1m[35mReview Load (0.3ms)[0m  SELECT "reviews".* FROM "reviews" WHERE "reviews"."mentor_id" IN (1, 2, 3, 4, 6, 8)
+Completed 200 OK in 14ms (Views: 9.7ms | ActiveRecord: 3.4ms)
+
+
+Started GET "/?page=2&_=1439873625028" for ::1 at 2015-08-18 00:53:45 -0400
+Processing by LandingPageController#index as JS
+  Parameters: {"page"=>"2", "_"=>"1439873625028"}
+  [1m[36mInvitation Load (0.3ms)[0m  [1mSELECT "invitations".* FROM "invitations" WHERE "invitations"."mentor_id" IS NULL AND "invitations"."status" = 'f'[0m
+  [1m[35mUser Load (0.4ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."status" = 't' LIMIT 5 OFFSET 5
+  [1m[36mHABTM_Categories Load (0.3ms)[0m  [1mSELECT "categories_users".* FROM "categories_users" WHERE "categories_users"."user_id" IN (8)[0m
+  [1m[35mCategory Load (0.3ms)[0m  SELECT "categories".* FROM "categories" WHERE "categories"."id" IN (1)
+  [1m[36mBasicProfile Load (0.2ms)[0m  [1mSELECT  "basic_profiles".* FROM "basic_profiles" WHERE "basic_profiles"."user_id" = $1 LIMIT 1[0m  [["user_id", 8]]
+  [1m[35m (0.2ms)[0m  SELECT AVG("reviews"."rating") FROM "reviews" WHERE "reviews"."mentor_id" = $1  [["mentor_id", 8]]
+  [1m[36mSkill Load (0.2ms)[0m  [1mSELECT "skills".* FROM "skills" WHERE "skills"."user_id" = $1[0m  [["user_id", 8]]
+  Rendered users/_user.html.erb (4.0ms)
+  Rendered landing_page/index.js.erb (12.7ms)
+Completed 200 OK in 20ms (Views: 15.4ms | ActiveRecord: 1.9ms)
+
+
+Started GET "/users.json" for ::1 at 2015-08-18 00:54:05 -0400
+Processing by UsersController#index as JSON
+  [1m[35mUser Load (0.3ms)[0m  SELECT "users".* FROM "users" WHERE "users"."status" = 't'
+  [1m[36mHABTM_Categories Load (0.3ms)[0m  [1mSELECT "categories_users".* FROM "categories_users" WHERE "categories_users"."user_id" IN (1, 2, 3, 4, 6, 8)[0m
+  [1m[35mCategory Load (0.2ms)[0m  SELECT "categories".* FROM "categories" WHERE "categories"."id" IN (1)
+  [1m[36mReview Load (0.2ms)[0m  [1mSELECT "reviews".* FROM "reviews" WHERE "reviews"."mentor_id" IN (1, 2, 3, 4, 6, 8)[0m
+Completed 200 OK in 9ms (Views: 7.3ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/users.json" for ::1 at 2015-08-18 00:54:05 -0400
+Processing by UsersController#index as JSON
+  [1m[35mUser Load (0.3ms)[0m  SELECT "users".* FROM "users" WHERE "users"."status" = 't'
+  [1m[36mHABTM_Categories Load (0.3ms)[0m  [1mSELECT "categories_users".* FROM "categories_users" WHERE "categories_users"."user_id" IN (1, 2, 3, 4, 6, 8)[0m
+  [1m[35mCategory Load (0.3ms)[0m  SELECT "categories".* FROM "categories" WHERE "categories"."id" IN (1)
+  [1m[36mReview Load (0.3ms)[0m  [1mSELECT "reviews".* FROM "reviews" WHERE "reviews"."mentor_id" IN (1, 2, 3, 4, 6, 8)[0m
+Completed 200 OK in 9ms (Views: 7.0ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/users.json" for ::1 at 2015-08-18 00:54:25 -0400
+Processing by UsersController#index as JSON
+  [1m[35mUser Load (0.3ms)[0m  SELECT "users".* FROM "users" WHERE "users"."status" = 't'
+  [1m[36mHABTM_Categories Load (0.3ms)[0m  [1mSELECT "categories_users".* FROM "categories_users" WHERE "categories_users"."user_id" IN (1, 2, 3, 4, 6, 8)[0m
+  [1m[35mCategory Load (0.3ms)[0m  SELECT "categories".* FROM "categories" WHERE "categories"."id" IN (1)
+  [1m[36mReview Load (0.2ms)[0m  [1mSELECT "reviews".* FROM "reviews" WHERE "reviews"."mentor_id" IN (1, 2, 3, 4, 6, 8)[0m
+Completed 200 OK in 9ms (Views: 7.2ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/users.json" for ::1 at 2015-08-18 00:54:25 -0400
+Processing by UsersController#index as JSON
+  [1m[35mUser Load (0.3ms)[0m  SELECT "users".* FROM "users" WHERE "users"."status" = 't'
+  [1m[36mHABTM_Categories Load (0.2ms)[0m  [1mSELECT "categories_users".* FROM "categories_users" WHERE "categories_users"."user_id" IN (1, 2, 3, 4, 6, 8)[0m
+  [1m[35mCategory Load (0.5ms)[0m  SELECT "categories".* FROM "categories" WHERE "categories"."id" IN (1)
+  [1m[36mReview Load (0.3ms)[0m  [1mSELECT "reviews".* FROM "reviews" WHERE "reviews"."mentor_id" IN (1, 2, 3, 4, 6, 8)[0m
+Completed 200 OK in 9ms (Views: 6.9ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/" for ::1 at 2015-08-18 00:54:29 -0400
+Processing by LandingPageController#index as HTML
+  [1m[35mInvitation Load (0.3ms)[0m  SELECT "invitations".* FROM "invitations" WHERE "invitations"."mentor_id" IS NULL AND "invitations"."status" = 'f'
+  Rendered landing_page/_map.html.erb (0.4ms)
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."status" = 't' LIMIT 5 OFFSET 0[0m
+  [1m[35mHABTM_Categories Load (0.3ms)[0m  SELECT "categories_users".* FROM "categories_users" WHERE "categories_users"."user_id" IN (1, 2, 3, 4, 6)
+  [1m[36m (0.3ms)[0m  [1mSELECT COUNT(*) FROM "users" WHERE "users"."status" = 't'[0m
+  [1m[35mBasicProfile Load (0.2ms)[0m  SELECT  "basic_profiles".* FROM "basic_profiles" WHERE "basic_profiles"."user_id" = $1 LIMIT 1  [["user_id", 1]]
+  [1m[36m (0.2ms)[0m  [1mSELECT AVG("reviews"."rating") FROM "reviews" WHERE "reviews"."mentor_id" = $1[0m  [["mentor_id", 1]]
+  [1m[35mSkill Load (0.2ms)[0m  SELECT "skills".* FROM "skills" WHERE "skills"."user_id" = $1  [["user_id", 1]]
+  [1m[36mBasicProfile Load (0.1ms)[0m  [1mSELECT  "basic_profiles".* FROM "basic_profiles" WHERE "basic_profiles"."user_id" = $1 LIMIT 1[0m  [["user_id", 2]]
+  [1m[35m (0.2ms)[0m  SELECT AVG("reviews"."rating") FROM "reviews" WHERE "reviews"."mentor_id" = $1  [["mentor_id", 2]]
+  [1m[36mSkill Load (0.2ms)[0m  [1mSELECT "skills".* FROM "skills" WHERE "skills"."user_id" = $1[0m  [["user_id", 2]]
+  [1m[35mBasicProfile Load (0.1ms)[0m  SELECT  "basic_profiles".* FROM "basic_profiles" WHERE "basic_profiles"."user_id" = $1 LIMIT 1  [["user_id", 3]]
+  [1m[36m (0.1ms)[0m  [1mSELECT AVG("reviews"."rating") FROM "reviews" WHERE "reviews"."mentor_id" = $1[0m  [["mentor_id", 3]]
+  [1m[35mSkill Load (0.2ms)[0m  SELECT "skills".* FROM "skills" WHERE "skills"."user_id" = $1  [["user_id", 3]]
+  [1m[36mBasicProfile Load (0.2ms)[0m  [1mSELECT  "basic_profiles".* FROM "basic_profiles" WHERE "basic_profiles"."user_id" = $1 LIMIT 1[0m  [["user_id", 4]]
+  [1m[35m (0.2ms)[0m  SELECT AVG("reviews"."rating") FROM "reviews" WHERE "reviews"."mentor_id" = $1  [["mentor_id", 4]]
+  [1m[36mSkill Load (0.1ms)[0m  [1mSELECT "skills".* FROM "skills" WHERE "skills"."user_id" = $1[0m  [["user_id", 4]]
+  [1m[35mBasicProfile Load (0.1ms)[0m  SELECT  "basic_profiles".* FROM "basic_profiles" WHERE "basic_profiles"."user_id" = $1 LIMIT 1  [["user_id", 6]]
+  [1m[36m (0.2ms)[0m  [1mSELECT AVG("reviews"."rating") FROM "reviews" WHERE "reviews"."mentor_id" = $1[0m  [["mentor_id", 6]]
+  [1m[35mSkill Load (0.1ms)[0m  SELECT "skills".* FROM "skills" WHERE "skills"."user_id" = $1  [["user_id", 6]]
+  Rendered users/_user.html.erb (13.9ms)
+  Rendered landing_page/index.html.erb within layouts/application (22.1ms)
+  Rendered application/_navbar.html.erb (1.6ms)
+  [1m[36mCategory Load (0.3ms)[0m  [1mSELECT "categories".* FROM "categories"[0m
+  Rendered landing_page/_signup.html.erb (4.9ms)
+Completed 200 OK in 170ms (Views: 164.6ms | ActiveRecord: 3.9ms)
+
+
+Started GET "/assets/inbox.self-3461de6a0a511e51dcd0625cb23590652935ae7c3ea8ef8a80c71c2992385cf0.js?body=1" for ::1 at 2015-08-18 00:54:29 -0400
+
+
+Started GET "/assets/jquery_ujs.self-ca5248a2fad13d6bd58ea121318d642f195f0b2dd818b30615f785ff365e8d1f.js?body=1" for ::1 at 2015-08-18 00:54:29 -0400
+
+
+Started GET "/assets/jquery.self-d03a5518f45df77341bdbe6201ba3bfa547ebba8ed64f0ea56bfa5f96ea7c074.js?body=1" for ::1 at 2015-08-18 00:54:29 -0400
+
+
+Started GET "/assets/invite.self-e133006c496ae6cecfa09b57253e998c1ba3a036ffac87673364ca1a733b2686.js?body=1" for ::1 at 2015-08-18 00:54:29 -0400
+
+
+Started GET "/assets/invitations.self-01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b.js?body=1" for ::1 at 2015-08-18 00:54:29 -0400
+
+
+Started GET "/assets/landing_page.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-08-18 00:54:29 -0400
+
+
+Started GET "/assets/application.self-3e63cca0303a11f9e82cc91b106bf977673298a932e4f57f6c279ff6a2fc3936.css?body=1" for ::1 at 2015-08-18 00:54:29 -0400
+
+
+Started GET "/assets/linkedin.self-19a187bec6cdb96d6de80a61c16c857c613536adf9138476bd367db38d282635.js?body=1" for ::1 at 2015-08-18 00:54:29 -0400
+
+
+Started GET "/assets/map.self-d6f2a1a282019411e786f39755e417fc9d47174cedec4f3cdc90a51131842b6b.js?body=1" for ::1 at 2015-08-18 00:54:29 -0400
+
+
+Started GET "/assets/map_stick.self-b442d99324d0e99b1c5ced633cc994e7cb0fbebeb4d78b74693477122af61ce8.js?body=1" for ::1 at 2015-08-18 00:54:29 -0400
+
+
+Started GET "/assets/reviews.self-f211498789a043e54ddf76d9380b9fb7c139233553d9a049cacec7a797a7a5f2.js?body=1" for ::1 at 2015-08-18 00:54:29 -0400
+
+
+Started GET "/assets/navbar.self-49b187eda3263d8929e075c93b1516fcb31112a33cbc48b8a93d4373b21f087f.js?body=1" for ::1 at 2015-08-18 00:54:29 -0400
+
+
+Started GET "/assets/tabs.self-bf0e4618237795790e31eb6c93a9629d0d79146578a227eeea0bc2e5b7209d81.js?body=1" for ::1 at 2015-08-18 00:54:29 -0400
+
+
+Started GET "/assets/users.self-6c68a1cdc45493ddcf809e2322d2eb9a7c4bc10aceaa057a57f138e4f4ad511b.js?body=1" for ::1 at 2015-08-18 00:54:29 -0400
+
+
+Started GET "/assets/application.self-43beaadb13072266fed946c38719550e1909ebb9ee5954d311623e59d5a13bba.js?body=1" for ::1 at 2015-08-18 00:54:29 -0400
+
+
+Started GET "/assets/navbutton-bf00fa45d4a4177eca3f4d70c7327cbe7aad2200305127e9d3307b6a5458ed8e.png" for ::1 at 2015-08-18 00:54:29 -0400
+
+
+Started GET "/users.json" for ::1 at 2015-08-18 00:54:31 -0400
+Processing by UsersController#index as JSON
+  [1m[35mUser Load (0.4ms)[0m  SELECT "users".* FROM "users" WHERE "users"."status" = 't'
+  [1m[36mHABTM_Categories Load (0.3ms)[0m  [1mSELECT "categories_users".* FROM "categories_users" WHERE "categories_users"."user_id" IN (1, 2, 3, 4, 6, 8)[0m
+  [1m[35mCategory Load (0.5ms)[0m  SELECT "categories".* FROM "categories" WHERE "categories"."id" IN (1)
+  [1m[36mReview Load (0.3ms)[0m  [1mSELECT "reviews".* FROM "reviews" WHERE "reviews"."mentor_id" IN (1, 2, 3, 4, 6, 8)[0m
+Completed 200 OK in 11ms (Views: 8.7ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/?page=2&_=1439873671879" for ::1 at 2015-08-18 00:54:32 -0400
+Processing by LandingPageController#index as JS
+  Parameters: {"page"=>"2", "_"=>"1439873671879"}
+  [1m[35mInvitation Load (0.3ms)[0m  SELECT "invitations".* FROM "invitations" WHERE "invitations"."mentor_id" IS NULL AND "invitations"."status" = 'f'
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."status" = 't' LIMIT 5 OFFSET 5[0m
+  [1m[35mHABTM_Categories Load (0.3ms)[0m  SELECT "categories_users".* FROM "categories_users" WHERE "categories_users"."user_id" IN (8)
+  [1m[36mCategory Load (0.3ms)[0m  [1mSELECT "categories".* FROM "categories" WHERE "categories"."id" IN (1)[0m
+  [1m[35mBasicProfile Load (0.3ms)[0m  SELECT  "basic_profiles".* FROM "basic_profiles" WHERE "basic_profiles"."user_id" = $1 LIMIT 1  [["user_id", 8]]
+  [1m[36m (0.2ms)[0m  [1mSELECT AVG("reviews"."rating") FROM "reviews" WHERE "reviews"."mentor_id" = $1[0m  [["mentor_id", 8]]
+  [1m[35mSkill Load (0.2ms)[0m  SELECT "skills".* FROM "skills" WHERE "skills"."user_id" = $1  [["user_id", 8]]
+  Rendered users/_user.html.erb (4.9ms)
+  Rendered landing_page/index.js.erb (12.7ms)
+Completed 200 OK in 20ms (Views: 15.5ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/users.json" for ::1 at 2015-08-18 00:54:32 -0400
+Processing by UsersController#index as JSON
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."status" = 't'[0m
+  [1m[35mHABTM_Categories Load (0.3ms)[0m  SELECT "categories_users".* FROM "categories_users" WHERE "categories_users"."user_id" IN (1, 2, 3, 4, 6, 8)
+  [1m[36mCategory Load (0.3ms)[0m  [1mSELECT "categories".* FROM "categories" WHERE "categories"."id" IN (1)[0m
+  [1m[35mReview Load (0.4ms)[0m  SELECT "reviews".* FROM "reviews" WHERE "reviews"."mentor_id" IN (1, 2, 3, 4, 6, 8)
+Completed 200 OK in 10ms (Views: 7.8ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/users/6/card" for ::1 at 2015-08-18 00:54:40 -0400
+Processing by UsersController#card as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 6]]
+  [1m[35m (0.2ms)[0m  SELECT AVG("reviews"."rating") FROM "reviews" WHERE "reviews"."mentor_id" = $1  [["mentor_id", 6]]
+  [1m[36mBasicProfile Load (0.3ms)[0m  [1mSELECT  "basic_profiles".* FROM "basic_profiles" WHERE "basic_profiles"."user_id" = $1 LIMIT 1[0m  [["user_id", 6]]
+  [1m[35mSkill Load (0.2ms)[0m  SELECT "skills".* FROM "skills" WHERE "skills"."user_id" = $1  [["user_id", 6]]
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1[0m
+  Rendered users/show.html.erb (31.2ms)
+Completed 500 Internal Server Error in 66ms (ActiveRecord: 1.2ms)
+
+ActionView::Template::Error (undefined method `id' for nil:NilClass):
+    14:   <div> Skills: <% @user.skills.each do |skill| %>
+    15:       <%= skill.name %>
+    16:     <% end %>
+    17:     <%if current_user.id == @user.id%>
+    18:      <li><%=link_to 'Edit Profile',edit_user_path(current_user) %></li>
+    19:      <li><a href="/linkedin_oauth_url" class="btn btn-primary btn-larg">Connect to LinkedIn</a></li>
+    20:      <%end%>
+  app/views/users/show.html.erb:17:in `_app_views_users_show_html_erb__2326981562810285677_70125967674700'
+  app/controllers/users_controller.rb:19:in `card'
+
+
+  Rendered /Users/manentea/.rbenv/versions/2.0.0-p481/lib/ruby/gems/2.0.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_source.erb (9.2ms)
+  Rendered /Users/manentea/.rbenv/versions/2.0.0-p481/lib/ruby/gems/2.0.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.8ms)
+  Rendered /Users/manentea/.rbenv/versions/2.0.0-p481/lib/ruby/gems/2.0.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.3ms)
+  Rendered /Users/manentea/.rbenv/versions/2.0.0-p481/lib/ruby/gems/2.0.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (33.1ms)
+  Rendered /Users/manentea/.rbenv/versions/2.0.0-p481/lib/ruby/gems/2.0.0/gems/web-console-2.1.3/lib/web_console/templates/_markup.html.erb (0.6ms)
+  Rendered /Users/manentea/.rbenv/versions/2.0.0-p481/lib/ruby/gems/2.0.0/gems/web-console-2.1.3/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.5ms)
+  Rendered /Users/manentea/.rbenv/versions/2.0.0-p481/lib/ruby/gems/2.0.0/gems/web-console-2.1.3/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/manentea/.rbenv/versions/2.0.0-p481/lib/ruby/gems/2.0.0/gems/web-console-2.1.3/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/manentea/.rbenv/versions/2.0.0-p481/lib/ruby/gems/2.0.0/gems/web-console-2.1.3/lib/web_console/templates/console.js.erb within layouts/javascript (44.0ms)
+  Rendered /Users/manentea/.rbenv/versions/2.0.0-p481/lib/ruby/gems/2.0.0/gems/web-console-2.1.3/lib/web_console/templates/main.js.erb within layouts/javascript (0.3ms)
+  Rendered /Users/manentea/.rbenv/versions/2.0.0-p481/lib/ruby/gems/2.0.0/gems/web-console-2.1.3/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.4ms)
+  Rendered /Users/manentea/.rbenv/versions/2.0.0-p481/lib/ruby/gems/2.0.0/gems/web-console-2.1.3/lib/web_console/templates/index.html.erb (95.4ms)
+
+
+Started GET "/" for ::1 at 2015-08-18 00:54:48 -0400
+Processing by LandingPageController#index as HTML
+  [1m[35mInvitation Load (0.4ms)[0m  SELECT "invitations".* FROM "invitations" WHERE "invitations"."mentor_id" IS NULL AND "invitations"."status" = 'f'
+  Rendered landing_page/_map.html.erb (0.4ms)
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."status" = 't' LIMIT 5 OFFSET 0[0m
+  [1m[35mHABTM_Categories Load (0.3ms)[0m  SELECT "categories_users".* FROM "categories_users" WHERE "categories_users"."user_id" IN (1, 2, 3, 4, 6)
+  [1m[36m (0.4ms)[0m  [1mSELECT COUNT(*) FROM "users" WHERE "users"."status" = 't'[0m
+  [1m[35mBasicProfile Load (0.2ms)[0m  SELECT  "basic_profiles".* FROM "basic_profiles" WHERE "basic_profiles"."user_id" = $1 LIMIT 1  [["user_id", 1]]
+  [1m[36m (0.2ms)[0m  [1mSELECT AVG("reviews"."rating") FROM "reviews" WHERE "reviews"."mentor_id" = $1[0m  [["mentor_id", 1]]
+  [1m[35mSkill Load (0.2ms)[0m  SELECT "skills".* FROM "skills" WHERE "skills"."user_id" = $1  [["user_id", 1]]
+  [1m[36mBasicProfile Load (0.1ms)[0m  [1mSELECT  "basic_profiles".* FROM "basic_profiles" WHERE "basic_profiles"."user_id" = $1 LIMIT 1[0m  [["user_id", 2]]
+  [1m[35m (0.2ms)[0m  SELECT AVG("reviews"."rating") FROM "reviews" WHERE "reviews"."mentor_id" = $1  [["mentor_id", 2]]
+  [1m[36mSkill Load (0.2ms)[0m  [1mSELECT "skills".* FROM "skills" WHERE "skills"."user_id" = $1[0m  [["user_id", 2]]
+  [1m[35mBasicProfile Load (0.2ms)[0m  SELECT  "basic_profiles".* FROM "basic_profiles" WHERE "basic_profiles"."user_id" = $1 LIMIT 1  [["user_id", 3]]
+  [1m[36m (0.2ms)[0m  [1mSELECT AVG("reviews"."rating") FROM "reviews" WHERE "reviews"."mentor_id" = $1[0m  [["mentor_id", 3]]
+  [1m[35mSkill Load (0.1ms)[0m  SELECT "skills".* FROM "skills" WHERE "skills"."user_id" = $1  [["user_id", 3]]
+  [1m[36mBasicProfile Load (0.2ms)[0m  [1mSELECT  "basic_profiles".* FROM "basic_profiles" WHERE "basic_profiles"."user_id" = $1 LIMIT 1[0m  [["user_id", 4]]
+  [1m[35m (0.2ms)[0m  SELECT AVG("reviews"."rating") FROM "reviews" WHERE "reviews"."mentor_id" = $1  [["mentor_id", 4]]
+  [1m[36mSkill Load (0.2ms)[0m  [1mSELECT "skills".* FROM "skills" WHERE "skills"."user_id" = $1[0m  [["user_id", 4]]
+  [1m[35mBasicProfile Load (0.1ms)[0m  SELECT  "basic_profiles".* FROM "basic_profiles" WHERE "basic_profiles"."user_id" = $1 LIMIT 1  [["user_id", 6]]
+  [1m[36m (0.1ms)[0m  [1mSELECT AVG("reviews"."rating") FROM "reviews" WHERE "reviews"."mentor_id" = $1[0m  [["mentor_id", 6]]
+  [1m[35mSkill Load (0.2ms)[0m  SELECT "skills".* FROM "skills" WHERE "skills"."user_id" = $1  [["user_id", 6]]
+  Rendered users/_user.html.erb (15.0ms)
+  Rendered landing_page/index.html.erb within layouts/application (91.4ms)
+  Rendered application/_navbar.html.erb (1.4ms)
+  [1m[36mCategory Load (0.3ms)[0m  [1mSELECT "categories".* FROM "categories"[0m
+  Rendered landing_page/_signup.html.erb (4.6ms)
+Completed 200 OK in 170ms (Views: 163.9ms | ActiveRecord: 4.1ms)
+
+
+Started GET "/assets/jquery_ujs.self-ca5248a2fad13d6bd58ea121318d642f195f0b2dd818b30615f785ff365e8d1f.js?body=1" for ::1 at 2015-08-18 00:54:49 -0400
+
+
+Started GET "/assets/invitations.self-01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b.js?body=1" for ::1 at 2015-08-18 00:54:49 -0400
+
+
+Started GET "/assets/inbox.self-3461de6a0a511e51dcd0625cb23590652935ae7c3ea8ef8a80c71c2992385cf0.js?body=1" for ::1 at 2015-08-18 00:54:49 -0400
+
+
+Started GET "/assets/jquery.self-d03a5518f45df77341bdbe6201ba3bfa547ebba8ed64f0ea56bfa5f96ea7c074.js?body=1" for ::1 at 2015-08-18 00:54:49 -0400
+
+
+Started GET "/assets/invite.self-e133006c496ae6cecfa09b57253e998c1ba3a036ffac87673364ca1a733b2686.js?body=1" for ::1 at 2015-08-18 00:54:49 -0400
+
+
+Started GET "/assets/landing_page.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-08-18 00:54:49 -0400
+
+
+Started GET "/assets/application.self-3e63cca0303a11f9e82cc91b106bf977673298a932e4f57f6c279ff6a2fc3936.css?body=1" for ::1 at 2015-08-18 00:54:49 -0400
+
+
+Started GET "/assets/linkedin.self-19a187bec6cdb96d6de80a61c16c857c613536adf9138476bd367db38d282635.js?body=1" for ::1 at 2015-08-18 00:54:49 -0400
+
+
+Started GET "/assets/map.self-d6f2a1a282019411e786f39755e417fc9d47174cedec4f3cdc90a51131842b6b.js?body=1" for ::1 at 2015-08-18 00:54:49 -0400
+
+
+Started GET "/assets/map_stick.self-b442d99324d0e99b1c5ced633cc994e7cb0fbebeb4d78b74693477122af61ce8.js?body=1" for ::1 at 2015-08-18 00:54:49 -0400
+
+
+Started GET "/assets/navbar.self-49b187eda3263d8929e075c93b1516fcb31112a33cbc48b8a93d4373b21f087f.js?body=1" for ::1 at 2015-08-18 00:54:49 -0400
+
+
+Started GET "/assets/reviews.self-f211498789a043e54ddf76d9380b9fb7c139233553d9a049cacec7a797a7a5f2.js?body=1" for ::1 at 2015-08-18 00:54:49 -0400
+
+
+Started GET "/assets/tabs.self-bf0e4618237795790e31eb6c93a9629d0d79146578a227eeea0bc2e5b7209d81.js?body=1" for ::1 at 2015-08-18 00:54:49 -0400
+
+
+Started GET "/assets/users.self-6c68a1cdc45493ddcf809e2322d2eb9a7c4bc10aceaa057a57f138e4f4ad511b.js?body=1" for ::1 at 2015-08-18 00:54:49 -0400
+
+
+Started GET "/assets/application.self-43beaadb13072266fed946c38719550e1909ebb9ee5954d311623e59d5a13bba.js?body=1" for ::1 at 2015-08-18 00:54:49 -0400
+
+
+Started GET "/assets/navbutton-bf00fa45d4a4177eca3f4d70c7327cbe7aad2200305127e9d3307b6a5458ed8e.png" for ::1 at 2015-08-18 00:54:49 -0400
+
+
+Started GET "/users.json" for ::1 at 2015-08-18 00:54:49 -0400
+Processing by UsersController#index as JSON
+  [1m[35mUser Load (0.5ms)[0m  SELECT "users".* FROM "users" WHERE "users"."status" = 't'
+  [1m[36mHABTM_Categories Load (0.9ms)[0m  [1mSELECT "categories_users".* FROM "categories_users" WHERE "categories_users"."user_id" IN (1, 2, 3, 4, 6, 8)[0m
+  [1m[35mCategory Load (0.4ms)[0m  SELECT "categories".* FROM "categories" WHERE "categories"."id" IN (1)
+  [1m[36mReview Load (0.9ms)[0m  [1mSELECT "reviews".* FROM "reviews" WHERE "reviews"."mentor_id" IN (1, 2, 3, 4, 6, 8)[0m
+Completed 200 OK in 22ms (Views: 17.9ms | ActiveRecord: 2.7ms)
+
+
+Started GET "/?page=2&_=1439873689397" for ::1 at 2015-08-18 00:54:49 -0400
+Processing by LandingPageController#index as JS
+  Parameters: {"page"=>"2", "_"=>"1439873689397"}
+  [1m[35mInvitation Load (0.3ms)[0m  SELECT "invitations".* FROM "invitations" WHERE "invitations"."mentor_id" IS NULL AND "invitations"."status" = 'f'
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."status" = 't' LIMIT 5 OFFSET 5[0m
+  [1m[35mHABTM_Categories Load (0.4ms)[0m  SELECT "categories_users".* FROM "categories_users" WHERE "categories_users"."user_id" IN (8)
+  [1m[36mCategory Load (0.4ms)[0m  [1mSELECT "categories".* FROM "categories" WHERE "categories"."id" IN (1)[0m
+  [1m[35mBasicProfile Load (0.2ms)[0m  SELECT  "basic_profiles".* FROM "basic_profiles" WHERE "basic_profiles"."user_id" = $1 LIMIT 1  [["user_id", 8]]
+  [1m[36m (0.2ms)[0m  [1mSELECT AVG("reviews"."rating") FROM "reviews" WHERE "reviews"."mentor_id" = $1[0m  [["mentor_id", 8]]
+  [1m[35mSkill Load (0.2ms)[0m  SELECT "skills".* FROM "skills" WHERE "skills"."user_id" = $1  [["user_id", 8]]
+  Rendered users/_user.html.erb (4.2ms)
+  Rendered landing_page/index.js.erb (13.4ms)
+Completed 200 OK in 21ms (Views: 16.8ms | ActiveRecord: 2.1ms)
+
+
+Started GET "/users.json" for ::1 at 2015-08-18 00:54:49 -0400
+Processing by UsersController#index as JSON
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."status" = 't'[0m
+  [1m[35mHABTM_Categories Load (0.4ms)[0m  SELECT "categories_users".* FROM "categories_users" WHERE "categories_users"."user_id" IN (1, 2, 3, 4, 6, 8)
+  [1m[36mCategory Load (0.4ms)[0m  [1mSELECT "categories".* FROM "categories" WHERE "categories"."id" IN (1)[0m
+  [1m[35mReview Load (0.4ms)[0m  SELECT "reviews".* FROM "reviews" WHERE "reviews"."mentor_id" IN (1, 2, 3, 4, 6, 8)
+Completed 200 OK in 12ms (Views: 9.7ms | ActiveRecord: 1.6ms)
